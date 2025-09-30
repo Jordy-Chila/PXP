@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Portafolio</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR (sticky arriba) -->
+  <header class="navbar" role="banner">
+    <div class="logo">
+      <!-- Reemplaza src si quieres un logo -->
+      <img src="img/logo.png" alt="Mi Logo" />
+    </div>
+
+    <!-- Menú superior (visible en escritorio) -->
+    <nav class="top-menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#about-section">Sobre mí</a></li>
+        <li><a href="#">Currículum</a></li>
+        <li><a href="#">Portafolio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón hamburguesa (móvil) -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <!-- Overlay para oscurecer fondo (no cubre navbar) -->
+  <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Barra lateral derecha (menú móvil) -->
+  <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
+    <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
+    <ul>
+     <li><a href="#home">Inicio</a></li>
+     <li><a href="#about-section">Sobre mí</a></li>
+     <li><a href="#">Currículum</a></li>
+     <li><a href="#">Portafolio</a></li>
+     <li><a href="#">Servicios</a></li>
+     <li><a href="#">Contacto</a></li>
+   </ul>
+ </nav>
+
+ <!-- SECCION HOME -->
+ <section id="home" class="home">
+  <!-- Lado Izquierdo -->
+  <div class="home-left">
+    <h1>Web & Mobile App <br>Developer</h1>
+    <p>
+      Convierto ideas complejas en software funcional: desde aplicaciones web y móviles
+      hasta sistemas inteligentes, creando experiencias sólidas, escalables y con impacto real.
+    </p>
+    <a href="https://drive.google.com/file/d/1glonXIZ3qUMxG_vJ2C2Qtp680ZZaLPhd/view?usp=sharing" 
+    class="btn-cv" 
+    target="_blank" 
+    rel="noopener noreferrer">
+    <i class="fas fa-file-alt"></i> Download CV
+  </a>
+</div>
+<!-- Lado Derecho -->
+<div class="home-right">
+  <!-- Texto grande seleccionable detrás de la imagen -->
+  <h2 class="bg-text">Ing. Jordy Chila <br></h2>
+
+  <!-- Imagen PNG por delante -->
+  <img src="img/home.png" alt="Imagen representativa" class="hero-img">
+</div>
+</section>
+
+<!-- SECCIÓN ABOUT ME/SOBRE MI -->
+<section id="about-section" class="about-section">
+  <div class="about-container">
+    <div class="about-header">
+      <button class="about-button">
+        <span class="star">✦</span> ABOUT ME
+      </button>
+      <h1>Hola! Soy Jordy Chila</h1>
+      <p>
+        Programador especializado en el desarrollo de plataformas educativas, aplicaciones móviles y soluciones con inteligencia artificial. Experiencia en proyectos con Unity (AR en Android) y en la implementación de chatbots académicos con IA. Enfocado en crear soluciones escalables y de alto rendimiento que optimicen procesos y generen valor tecnológico.
+      </p>
+    </div>
+
+    <div class="about-info-grid">
+      <div class="info-item">
+        <span class="info-label">contact</span>
+        <span class="info-value">ychilaavilez@gmail.com</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Phone</span>
+        <span class="info-value">+593 000-000-000</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Spoken Languages</span>
+        <span class="info-value">English - French </span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Interest</span>
+        <span class="info-value">Music, Reading, journey</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Social Media</span>
+        <div class="social-icons-grid">
+          <a href="#"target="_blank"><i class="fab fa-figma"></i></a>
+          <a href="#"target="_blank"><i class="fab fa-dribbble"></i></a>
+          <a href="#"target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="#"target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/yordy-chila-avilez-a0279515b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bieh1MfoySm%2BDyOtbDhGrag%3D%3D" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // --- Animación para el contenido de "Sobre mí" ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const aboutContainer = document.querySelector(".about-container");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (aboutContainer) {
+      observer.observe(aboutContainer);
+    }
+  });
+</script>
+
+
+<script>
+  // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('side-menu');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('closeMenu');
+
+  function openMenu() {
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+    hamburger.setAttribute('aria-expanded', 'true');
+    sideMenu.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    hamburger.setAttribute('aria-expanded', 'false');
+    sideMenu.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  hamburger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
+  });
+</script>
+
+</body>
+</html>
