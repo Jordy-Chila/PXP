@@ -374,6 +374,11 @@
   color: #848caa;
   text-transform: capitalize;
 }
+.info-value {
+  font-size: 15px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
 /* Social Media estilo grid */
 .social-icons-grid {
   display: grid;
