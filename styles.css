@@ -272,7 +272,7 @@
     .hamburger { display: block; }
     .home { flex-direction: column; }
     .home-left { padding: 40px 20px; }
-    .home-right { padding: 20px; min-height: 360px; align-items: center; }
+    .home-right { padding: 200px; min-height: 360px; align-items: center; }
     .bg-text { font-size: 2.2rem; top: 30%; }
     .hero-img { max-width: 420px; }
   }
@@ -287,7 +287,6 @@
   .about-section {
     scroll-margin-top: var(--navbar-height);
   }
-
 
 /* ===========================
    SECCIÓN About Me / Sobre mí
@@ -449,4 +448,121 @@
     gap: 20px;
   }
 }
+
+/* ===========================
+   SECCIÓN SERVICE
+   =========================== */
+.service-section {
+  background-color: #050c17;
+  color: #fff;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+/* Parte 1: Contexto */
+.contex-Service {
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+
+.service-button {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
+  transition: all 0.3s ease;
+}
+
+.service-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 111, 214, 0.4);
+}
+
+.contex-Service h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contex-Service p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Parte 2: Info (3 cuadros) */
+.info-Service {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+}
+
+.service-card {
+  background: #0a1221;
+  border-radius: 16px;
+  padding: 40px 24px;
+  flex: 1 1 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.service-card i {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.service-card p {
+  color: #bcbcbc;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(124, 111, 214, 0.3);
+}
+
+/* ANIMACIÓN solo al bloque contex-Service */
+.contex-Service {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.contex-Service.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 

@@ -27,9 +27,8 @@
       <ul>
         <li><a href="#home">Inicio</a></li>
         <li><a href="#about-section">Sobre mí</a></li>
-        <li><a href="#">Currículum</a></li>
-        <li><a href="#">Portafolio</a></li>
-        <li><a href="#">Servicios</a></li>
+        <li><a href="#service">Portafolio</a></li>
+   
         <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
@@ -47,9 +46,7 @@
     <ul>
      <li><a href="#home">Inicio</a></li>
      <li><a href="#about-section">Sobre mí</a></li>
-     <li><a href="#">Currículum</a></li>
-     <li><a href="#">Portafolio</a></li>
-     <li><a href="#">Servicios</a></li>
+     <li><a href="#service">Portafolio</a></li>
      <li><a href="#">Contacto</a></li>
    </ul>
  </nav>
@@ -63,7 +60,7 @@
       Convierto ideas complejas en software funcional: desde aplicaciones web y móviles
       hasta sistemas inteligentes, creando experiencias sólidas, escalables y con impacto real.
     </p>
-    <a href="https://drive.google.com/file/d/1glonXIZ3qUMxG_vJ2C2Qtp680ZZaLPhd/view?usp=sharing" 
+    <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" 
     class="btn-cv" 
     target="_blank" 
     rel="noopener noreferrer">
@@ -143,6 +140,60 @@
     }
   });
 </script>
+
+<!-- SECCIÓN SERVICES -->
+<section id="service" class="service-section">
+  <div class="contex-Service">
+    <button class="service-button">
+      <span class="star">✦</span> SERVICES
+    </button>
+    <h1>What I Offer</h1>
+    <p>
+      Transformo ideas en soluciones funcionales: desarrollo de software, sitios web, y sistemas inteligentes adaptados a tus necesidades.
+    </p>
+  </div>
+
+  <div class="info-Service">
+    <div class="service-card">
+      <i class="fas fa-code"></i>
+      <h3>Web Development</h3>
+      <p>Desarrollo sitios web modernos, rápidos y optimizados para cualquier dispositivo.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Mobile Apps</h3>
+      <p>Aplicaciones móviles intuitivas y de alto rendimiento en Android y iOS.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-brain"></i>
+      <h3>AI Integration</h3>
+      <p>Integro soluciones con inteligencia artificial para automatizar y optimizar procesos.</p>
+    </div>
+  </div>
+</section>
+<script>
+  // --- Animación para el contenido de "Service" ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const contexService = document.querySelector(".contex-Service");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (contexService) {
+      observer.observe(contexService);
+    }
+  });
+</script>
+
 
 
 <script>
