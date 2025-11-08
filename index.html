@@ -45,17 +45,57 @@
   <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
     <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
     <ul>
-     <li><a href="#home">Inicio</a></li>
+     <li><a href="#home"><i class="fas fa-home"></i>Inicio</a></li>
      <li><a href="#about-section">Sobre mí</a></li>
      <li><a href="#">Currículum</a></li>
      <li><a href="#">Portafolio</a></li>
      <li><a href="#">Servicios</a></li>
-     <li><a href="#">Contacto</a></li>
+     <li><a href="#">Contactos</a></li>
    </ul>
  </nav>
+ <script>
+  // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('side-menu');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('closeMenu');
 
- <!-- SECCION HOME -->
- <section id="home" class="home">
+  function openMenu() {
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+    hamburger.setAttribute('aria-expanded', 'true');
+    sideMenu.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    hamburger.setAttribute('aria-expanded', 'false');
+    sideMenu.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (sideMenu.classList.contains('active')) {
+    closeMenu(); // 🔹 Si ya está abierto, lo cierra
+  } else {
+    openMenu();  // 🔹 Si está cerrado, lo abre
+  }
+});
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
+  });
+</script>
+
+<!-- SECCION HOME -->
+<section id="home" class="home">
   <!-- Lado Izquierdo -->
   <div class="home-left">
     <h1>Web & Mobile App <br>Developer</h1>
@@ -338,41 +378,5 @@
     </div>
   </div>
 </section>
-
-
-<script>
-  // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
-  const hamburger = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('side-menu');
-  const overlay = document.getElementById('overlay');
-  const closeBtn = document.getElementById('closeMenu');
-
-  function openMenu() {
-    sideMenu.classList.add('active');
-    overlay.classList.add('active');
-    document.body.classList.add('no-scroll');
-    hamburger.setAttribute('aria-expanded', 'true');
-    sideMenu.setAttribute('aria-hidden', 'false');
-    overlay.setAttribute('aria-hidden', 'false');
-  }
-  function closeMenu() {
-    sideMenu.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-    hamburger.setAttribute('aria-expanded', 'false');
-    sideMenu.setAttribute('aria-hidden', 'true');
-    overlay.setAttribute('aria-hidden', 'true');
-  }
-
-  hamburger.addEventListener('click', openMenu);
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
-
-  // Cerrar con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
-  });
-</script>
-
 </body>
 </html>
