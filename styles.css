@@ -293,7 +293,7 @@
    =========================== */
    .about-section {
     background-color: #ffffff; /* FONDO */
-    padding: 80px 10%;
+    padding: 50px 10%;
     font-family: 'Sora', 'Roboto', sans-serif;
     border-top: 1px solid #e0e0e0;   /* línea delgada superior */
     border-bottom: 1px solid #e0e0e0; /* línea delgada inferior */
@@ -420,6 +420,108 @@
 .about-container.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===========================
+   SECCIÓN SKILLS
+   =========================== */
+.skills-section {
+  background: #fafafa;
+  padding: 30px 10%;
+  text-align: left;
+  color: #1a1a1a;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skills-button {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
+}
+
+.skills-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-left: 3px solid #7c6fd6;
+  padding-left: 10px;
+}
+
+.skills-section p {
+  font-size: 15px;
+  color: #848caa;
+  margin-bottom: 50px;
+}
+
+/* ---- GRID DE DOS COLUMNAS ---- */
+.skills-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+}
+
+.skill-item {
+  margin-bottom: 24px;
+}
+
+.skill-name {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+.bar {
+  position: relative;
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fill {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+}
+
+.percent {
+  position: absolute;
+  right: 6px;
+  top: -22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7c6fd6;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .skills-grid-two {
+    grid-template-columns: 1fr;
+  }
+  .skills-section {
+    text-align: center;
+  }
+  .skills-section h1 {
+    border: none;
+    padding-left: 0;
+  }
 }
 
 /* ===========================
@@ -753,20 +855,25 @@
   font-size: 12px;
   font-weight: 700;
   margin-top: 4px;
-}
-/* ===========================
-   SKILLS 
-   =========================== */
-.skills-section {
-  background: #fafafa;
+}/* ===========================================
+   SECTION EDUCATION & EXPERIENCE
+=========================================== */
+
+.edu-exp-section {
+  background: #ffffff;
   padding: 100px 10%;
-  text-align: left;
-  color: #1a1a1a;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
+  font-family: 'Sora', 'Roboto', sans-serif;
 }
 
-.skills-button {
+.edu-exp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edu-exp-button {
   background: linear-gradient(135deg, #7c6fd6, #9c84e2);
   color: #fff;
   border: none;
@@ -778,80 +885,212 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
 }
 
-.skills-section h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px;
+.edu-exp-section h1 {
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 8px;
-  border-left: 3px solid #7c6fd6;
-  padding-left: 10px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 12px;
 }
 
-.skills-section p {
+.edu-exp-description {
   font-size: 15px;
   color: #848caa;
-  margin-bottom: 50px;
+  max-width: 760px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
 }
 
-/* ---- GRID DE DOS COLUMNAS ---- */
-.skills-grid-two {
+/* SUBSECCIÓN */
+.edu-exp-subsection {
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 20px;
+  background-image: url("img/bg-pattern.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Eliminado:
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    */
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* GRID 2X6 */
+.edu-exp-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 50px;
 }
 
-.skill-item {
-  margin-bottom: 24px;
+.edu-exp-box {
+  text-align: left;
+  padding: 10px 5px;
 }
 
-.skill-name {
-  display: block;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 6px;
+.edu-exp-empty {
+  height: 100%;
+}
+
+.edu-exp-box h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
   color: #1a1a1a;
 }
 
-.bar {
-  position: relative;
-  background: #e0e0e0;
-  height: 10px;
-  border-radius: 8px;
-  overflow: hidden;
+.edu-exp-box p {
+  color: #848caa;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
-.fill {
-  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
-  height: 100%;
-  position: relative;
-  border-radius: 8px;
-}
-
-.percent {
-  position: absolute;
-  right: 6px;
-  top: -22px;
+.edu-location {
   font-size: 13px;
+  color: #555;
   font-weight: 600;
-  color: #7c6fd6;
 }
 
-/* ---- RESPONSIVE ---- */
+/* ===========================================
+   ALINEACIÓN DE TEXTO POR COLUMNA/POSICIÓN
+=========================================== */
+
+/* Columna 1 → posiciones 1, 5, 9 */
+.edu-exp-grid > .edu-exp-box:nth-child(1),
+.edu-exp-grid > .edu-exp-box:nth-child(5),
+.edu-exp-grid > .edu-exp-box:nth-child(9) {
+  text-align: right;
+}
+
+/* Columna 2 → posiciones 3, 7, 11 */
+.edu-exp-grid > .edu-exp-box:nth-child(3),
+.edu-exp-grid > .edu-exp-box:nth-child(7),
+.edu-exp-grid > .edu-exp-box:nth-child(11) {
+  text-align: left;
+}
+
+/* ===========================================
+   ICONOS CIRCULARES
+=========================================== */
+
+.edu-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.edu-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: #f5f5f7;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.edu-icons img:hover {
+  transform: scale(1.08);
+}
+
+/* ===========================================
+   ALINEACIÓN DE CÍRCULOS POR POSICIÓN REAL
+=========================================== */
+
+/* POSICIÓN 9 → Columna 1 → DERECHA */
+.edu-exp-grid > .edu-exp-box:nth-child(9) .edu-icons {
+  justify-content: flex-end;
+}
+
+/* POSICIÓN 7 → Columna 2 → IZQUIERDA */
+.edu-exp-grid > .edu-exp-box:nth-child(7) .edu-icons {
+  justify-content: flex-start;
+}
+
+/* POSICIÓN 11 → Columna 2 → IZQUIERDA */
+.edu-exp-grid > .edu-exp-box:nth-child(11) .edu-icons {
+  justify-content: flex-start;
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
 @media (max-width: 900px) {
-  .skills-grid-two {
+  .edu-exp-grid {
     grid-template-columns: 1fr;
   }
-  .skills-section {
-    text-align: center;
-  }
-  .skills-section h1 {
-    border: none;
-    padding-left: 0;
+  .edu-exp-empty {
+    display: none;
   }
 }
+/* ============================================
+   LÍNEA ENTRE COLUMNA 1 Y COLUMNA 2
+=========================================== */
+
+.edu-exp-grid {
+  position: relative;
+}
+
+.edu-exp-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;  /* justo al centro del grid */
+  width: 2px;
+
+  border-left: 2px dashed #cfcfcf; /* línea entrecortada */
+  transform: translateX(-50%);
+  z-index: 1; /* detrás de los cuadros pero visible */
+}
+
+/* ============================================
+   VIÑETAS EN POSICIONES 1,3,5,7,9,11
+=========================================== */
+
+/* Centra el punto sobre la línea */
+.edu-exp-grid > .edu-exp-box:nth-child(1)::after,
+.edu-exp-grid > .edu-exp-empty:nth-child(3)::after,
+.edu-exp-grid > .edu-exp-box:nth-child(5)::after,
+.edu-exp-grid > .edu-exp-empty:nth-child(7)::after,
+.edu-exp-grid > .edu-exp-box:nth-child(9)::after,
+.edu-exp-grid > .edu-exp-empty:nth-child(11)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;           /* fondo blanco para que “corte” la línea */
+  border: 3px solid #9c84e2;     /* borde color acorde a tu paleta */
+  border-radius: 50%;
+  z-index: 3; /* sobre la línea */
+}
+
+/* Ajustar posición vertical exacta */
+.edu-exp-grid > .edu-exp-box:nth-child(1)::after {
+  top: 1%;
+}
+.edu-exp-grid > .edu-exp-empty:nth-child(3)::after{
+  top: 17%;
+}
+.edu-exp-grid > .edu-exp-box:nth-child(5)::after{
+  top: 30%;
+}
+.edu-exp-grid > .edu-exp-empty:nth-child(7)::after{
+  top: 44%;
+}
+.edu-exp-grid > .edu-exp-box:nth-child(9)::after{
+  top: 65%;
+}
+.edu-exp-grid > .edu-exp-empty:nth-child(11)::after;{
+  top: 72%;
+}
+
