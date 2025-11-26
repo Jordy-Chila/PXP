@@ -855,7 +855,8 @@
   font-size: 12px;
   font-weight: 700;
   margin-top: 4px;
-}/* ===========================================
+}
+/* ===========================================
    SECTION EDUCATION & EXPERIENCE
 =========================================== */
 
@@ -1093,4 +1094,53 @@
 .edu-exp-grid > .edu-exp-empty:nth-child(11)::after;{
   top: 72%;
 }
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+@media (max-width: 900px) {
 
+  /* 1) El grid pasa a 1 sola columna */
+  .edu-exp-grid {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  /* 2) Eliminar espacios vacíos */
+  .edu-exp-empty {
+    display: none;
+  }
+
+  /* 3) Alinear todos los cuadros a la izquierda */
+  .edu-exp-box {
+    text-align: left !important;
+  }
+
+  /* 4) Justificar los párrafos */
+  .edu-exp-box p {
+    text-align: justify;
+  }
+
+  /* 5) Imagen de subsección desaparece */
+  .edu-exp-subsection {
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 6) Mover la línea entrecortada a la izquierda */
+  .edu-exp-grid::before {
+    display: block !important;
+    left: 0;                /* pegado a la izquierda */
+    transform: none;        /* sin centrar */
+    border-left: 2px dashed #cfcfcf;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  }
+
+  /* 7) Mover los puntos a la izquierda y alinearlos a la línea */
+  .edu-exp-grid > *::after {
+    left: 0;
+    transform: translateX(-50%); /* mantener centrado en la línea */
+    margin-left: 0;
+  }
+}
