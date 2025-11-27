@@ -716,6 +716,18 @@
   gap: 60px;
   align-items: center;
 }
+.skills-awards-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.skills-awards-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ---- CÍRCULOS DE SKILLS ---- */
 .skills-circles {
@@ -729,9 +741,9 @@
 .circle-skill {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 50%;
+  border-radius: 47%;
   width: 130px;
-  height: 130px;
+  height: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -862,7 +874,7 @@
 
 .edu-exp-section {
   background: #ffffff;
-  padding: 100px 10%;
+  padding: 50px 10%;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
   font-family: 'Sora', 'Roboto', sans-serif;
@@ -904,11 +916,24 @@
   margin: 0 auto 50px auto;
   line-height: 1.6;
 }
+/* ANIMACIÓN GENERAL PARA EDUCATION & EXPERIENCE */
+.edu-exp-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.edu-exp-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* SUBSECCIÓN */
 .edu-exp-subsection {
   background: #ffffff;
-  padding: 60px 40px;
+  padding: 0px 0px;
   border-radius: 20px;
   background-image: url("img/bg-pattern.png");
   background-size: cover;
@@ -936,8 +961,24 @@
 .edu-exp-empty {
   height: 100%;
 }
+.edu-exp-box h2 {
+  display: inline-block;   /* ← los coloca en la misma línea */
+  margin-right: 10px;      /* ← separación entre ellos */
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: yellow;
+}
+#fila1{
+  color: #ffc627;
+}
+#fila2{
+  color: #a35ff6;
+}
 
 .edu-exp-box h3 {
+  display: inline-block;   /* ← los coloca en la misma línea */
+  margin-right: 10px;      /* ← separación entre ellos */
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -975,7 +1016,7 @@
 }
 
 /* ===========================================
-   ICONOS CIRCULARES
+   ICONOS CIRCULARES - CURSOS
 =========================================== */
 
 .edu-icons {
@@ -1000,37 +1041,6 @@
   transform: scale(1.08);
 }
 
-/* ===========================================
-   ALINEACIÓN DE CÍRCULOS POR POSICIÓN REAL
-=========================================== */
-
-/* POSICIÓN 9 → Columna 1 → DERECHA */
-.edu-exp-grid > .edu-exp-box:nth-child(9) .edu-icons {
-  justify-content: flex-end;
-}
-
-/* POSICIÓN 7 → Columna 2 → IZQUIERDA */
-.edu-exp-grid > .edu-exp-box:nth-child(7) .edu-icons {
-  justify-content: flex-start;
-}
-
-/* POSICIÓN 11 → Columna 2 → IZQUIERDA */
-.edu-exp-grid > .edu-exp-box:nth-child(11) .edu-icons {
-  justify-content: flex-start;
-}
-
-/* ===========================================
-   RESPONSIVE
-=========================================== */
-
-@media (max-width: 900px) {
-  .edu-exp-grid {
-    grid-template-columns: 1fr;
-  }
-  .edu-exp-empty {
-    display: none;
-  }
-}
 /* ============================================
    LÍNEA ENTRE COLUMNA 1 Y COLUMNA 2
 =========================================== */
@@ -1047,53 +1057,11 @@
   left: 50%;  /* justo al centro del grid */
   width: 2px;
 
-  border-left: 2px dashed #cfcfcf; /* línea entrecortada */
+  border-left: 5px dashed #cfcfcf; /* línea entrecortada */
   transform: translateX(-50%);
   z-index: 1; /* detrás de los cuadros pero visible */
 }
 
-/* ============================================
-   VIÑETAS EN POSICIONES 1,3,5,7,9,11
-=========================================== */
-
-/* Centra el punto sobre la línea */
-.edu-exp-grid > .edu-exp-box:nth-child(1)::after,
-.edu-exp-grid > .edu-exp-empty:nth-child(3)::after,
-.edu-exp-grid > .edu-exp-box:nth-child(5)::after,
-.edu-exp-grid > .edu-exp-empty:nth-child(7)::after,
-.edu-exp-grid > .edu-exp-box:nth-child(9)::after,
-.edu-exp-grid > .edu-exp-empty:nth-child(11)::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
-  background: #ffffff;           /* fondo blanco para que “corte” la línea */
-  border: 3px solid #9c84e2;     /* borde color acorde a tu paleta */
-  border-radius: 50%;
-  z-index: 3; /* sobre la línea */
-}
-
-/* Ajustar posición vertical exacta */
-.edu-exp-grid > .edu-exp-box:nth-child(1)::after {
-  top: 1%;
-}
-.edu-exp-grid > .edu-exp-empty:nth-child(3)::after{
-  top: 17%;
-}
-.edu-exp-grid > .edu-exp-box:nth-child(5)::after{
-  top: 30%;
-}
-.edu-exp-grid > .edu-exp-empty:nth-child(7)::after{
-  top: 44%;
-}
-.edu-exp-grid > .edu-exp-box:nth-child(9)::after{
-  top: 65%;
-}
-.edu-exp-grid > .edu-exp-empty:nth-child(11)::after;{
-  top: 72%;
-}
 /* ===========================================
    RESPONSIVE
 =========================================== */
@@ -1107,40 +1075,34 @@
 
   /* 2) Eliminar espacios vacíos */
   .edu-exp-empty {
-    display: none;
+    display: none !important;
   }
 
-  /* 3) Alinear todos los cuadros a la izquierda */
+  /* 3) Texto alineado a la izquierda */
   .edu-exp-box {
     text-align: left !important;
   }
 
-  /* 4) Justificar los párrafos */
   .edu-exp-box p {
     text-align: justify;
   }
 
-  /* 5) Imagen de subsección desaparece */
+  /* 4) Fondo de subsección se elimina */
   .edu-exp-subsection {
     background-image: none !important;
     box-shadow: none !important;
   }
 
-  /* 6) Mover la línea entrecortada a la izquierda */
+  /* 5) LÍNEA entrecortada a la izquierda */
   .edu-exp-grid::before {
-    display: block !important;
-    left: 0;                /* pegado a la izquierda */
-    transform: none;        /* sin centrar */
-    border-left: 2px dashed #cfcfcf;
-    height: 100%;
+    content: "";
+    position: absolute;
     top: 0;
     bottom: 0;
+    left: 1px;
+    width: 2px;
+    border-left: 2px dashed #cfcfcf;
+    z-index: 1;
   }
 
-  /* 7) Mover los puntos a la izquierda y alinearlos a la línea */
-  .edu-exp-grid > *::after {
-    left: 0;
-    transform: translateX(-50%); /* mantener centrado en la línea */
-    margin-left: 0;
-  }
 }

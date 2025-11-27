@@ -135,19 +135,19 @@
 
     <div class="about-info-grid">
       <div class="info-item">
-        <span class="info-label">contact</span>
-        <span class="info-value">ychilaavilez@gmail.com</span>
+        <span class="info-label">Correo</span>
+        <span class="info-value">jordychila21@gmail.com</span>
       </div>
       <div class="info-item">
-        <span class="info-label">Phone</span>
-        <span class="info-value">+593 000-000-000</span>
+        <span class="info-label">Teléfono</span>
+        <span class="info-value">(+593) 98 685 526</span>
       </div>
       <div class="info-item">
-        <span class="info-label">Spoken Languages</span>
+        <span class="info-label">Idiomas</span>
         <span class="info-value">English - French </span>
       </div>
       <div class="info-item">
-        <span class="info-label">Interest</span>
+        <span class="info-label">Interes</span>
         <span class="info-value">Music, Reading, journey</span>
       </div>
       <div class="info-item">
@@ -190,7 +190,7 @@
   <div class="skills-container">
     <h1>Skills</h1>
     <p>
-      Necesitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit.
+      Soy un profesional versátil con experiencia en áreas técnicas, creativas y operativas. Destaco por mi capacidad de adaptación, pensamiento analítico y orientación a resultados.
     </p>
 
     <div class="skills-grid-two">
@@ -328,27 +328,32 @@
           <h4>Figma</h4>
           <span>90%</span>
         </div>
+
         <div class="circle-skill">
           <img src="img/sketch.png" alt="Sketch">
           <h4>Sketch</h4>
           <span>90%</span>
         </div>
+
         <div class="circle-skill">
           <img src="img/ps.png" alt="Photoshop">
           <h4>Photoshop</h4>
           <span>90%</span>
         </div>
+
         <div class="circle-skill">
           <img src="img/ai.png" alt="Illustrator">
           <h4>Illustrator</h4>
           <span>90%</span>
         </div>
-        <div class="circle-skill large">
+
+        <div class="circle-skill">
           <img src="img/xd.png" alt="Adobe XD">
           <h4>Adobe XD</h4>
           <span>90%</span>
         </div>
       </div>
+
 
       <!-- Columna Derecha: Awards -->
       <div class="awards-column">
@@ -380,6 +385,59 @@
     </div>
   </div>
 </section>
+<script>
+  // --- Animación para el contenido de "Skills & Awards" ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const skillsAwardsContainer = document.querySelector(".skills-awards-container");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible"); 
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (skillsAwardsContainer) {
+      observer.observe(skillsAwardsContainer);
+    }
+  });
+</script>
+
+<script>
+  function updateSkillCircles() {
+    const container = document.querySelector(".skills-circles");
+    const items = Array.from(container.querySelectorAll(".circle-skill"));
+
+  // Asegurar que el último no tenga la clase al comenzar
+    const last = items[items.length - 1];
+    last.classList.remove("large");
+
+  // medir el ancho disponible
+    const maxWidth = container.clientWidth;
+    let currentWidth = 0;
+    const gap = 30;
+
+  // sumar TODOS excepto el último
+    for (let i = 0; i < items.length - 1; i++) {
+      currentWidth += items[i].offsetWidth + gap;
+    }
+
+  // medir al último
+    const lastWidth = last.offsetWidth;
+
+  // si el último NO cabe → convertirlo en LARGE
+    if (currentWidth + lastWidth > maxWidth) {
+      last.classList.add("large");
+    }
+  }
+
+  window.addEventListener("load", updateSkillCircles);
+  window.addEventListener("resize", updateSkillCircles);
+</script>
+
 <!-- ===========================================
      SECTION EDUCATION & EXPERIENCE
 =========================================== -->
@@ -400,27 +458,29 @@
 
         <!-- Fila 1 -->
         <div class="edu-exp-box"> <!-- POSICIÓN 1 -->
-          <h3>2010 - 2012 · Msc IT Master Degree</h3>
-          <p>Harvard University es una institución educativa que ofrece programas de posgrado y profesionalización.</p>
-          <span class="edu-location">Harvard University</span>
-        </div>
+          <h2 id="fila2">2025 </h2><h3> Ingeniero en Tecnologías de la Información</h3>
 
+          <p>La Universidad Técnica Luis Vargas Torres de Esmeraldas es una institución de educación superior que forma profesionales competentes en el ámbito tecnológico, con enfoque en desarrollo de sistemas, gestión de información y soluciones informáticas aplicadas.</p>
+          <span class="edu-location">Universidad Técnica Luis Vargas Torres de Esmeraldas</span>
+        </div>
         <div class="edu-exp-empty"></div> <!-- POS 2 -->
 
         <!-- Fila 2 -->
         <div class="edu-exp-empty"></div> <!-- POS 3 -->
 
         <div class="edu-exp-box"> <!-- POSICIÓN 4 -->
-          <h3>2013 - 2014 · Software Engineering Diploma</h3>
-          <p>Formación enfocada en desarrollo de sistemas y metodologías ágiles.</p>
-          <span class="edu-location">MIT</span>
+          <h3> Bachiller Técnico de Servicios en Aplicaciones Informáticas</h3> <h2 id="fila2">2019</h2>
+
+          <p>La Unidad Educativa Fiscomisional Sagrado Corazón es una institución que ofrece formación integral y técnica, preparando a los estudiantes con competencias en aplicaciones informáticas, soporte tecnológico y herramientas digitales.</p>
+          <span class="edu-location">Unidad Educativa Fiscomisional Sagrado Corazón</span>
         </div>
 
         <!-- Fila 3 -->
         <div class="edu-exp-box"> <!-- POSICIÓN 5 -->
-          <h3>2015 - 2017 · Backend Developer</h3>
-          <p>Desarrollo de APIs, integración de bases de datos y optimización.</p>
-          <span class="edu-location">Google</span>
+          <h2 id="fila1">2025 </h2><h3> Profesor de la asignatura de Computación</h3>
+
+          <p>Docente de Computación, enseñando competencias digitales, programación básica y uso de herramientas tecnológicas para fortalecer la formación académica y práctica de los estudiantes.</p>
+          <span class="edu-location">Escuela de Capacitación para Conductores Profesionales de Esmeraldas</span>
         </div>
 
         <div class="edu-exp-empty"></div> <!-- POS 6 -->
@@ -429,11 +489,12 @@
         <div class="edu-exp-empty"></div> <!-- POS 7-1 -->
 
         <div class="edu-exp-box"> <!-- POSICIÓN 7 -->
-          <h3>2018 - 2020 · Mobile Developer</h3>
-          <p>Creación de apps nativas y UI/UX móvil.</p>
-          <span class="edu-location">Meta</span>
+          <h3> Diseño en Desarrollo web y E-learning</h3> <h2 id="fila1">2025</h2>
 
-          <!-- CÍRCULOS (POS 7) -->
+          <p>En diseño y desarrollo web educativo, implementación y administración de Moodle, así como en la integración de herramientas digitales y metodologías e-learning para fortalecer la calidad de los entornos virtuales de aprendizaje.</p>
+          <span class="edu-location"></span>
+
+          <!-- ICONOS CIRCULARES - CURSOS (POS 7) -->
           <div class="edu-icons">
             <img src="img/figma.png">
             <img src="img/sketch.png">
@@ -444,11 +505,12 @@
 
         <!-- Fila 5 → POSICIÓN 9 — CÍRCULOS A LA DERECHA -->
         <div class="edu-exp-box"> <!-- POSICIÓN 9 -->
-          <h3>2021 · Unity/AR Developer</h3>
-          <p>AR para Android, optimización y sistemas interactivos.</p>
-          <span class="edu-location">Proyecto Independiente</span>
+          <h2 id="fila1">2024 </h2><h3> Analista de Datos y Automatización en Microsoft Excel</h3>
 
-          <!-- CÍRCULOS (POS 9) -->
+          <p>Experiencia como Analista de Datos, aplicando Microsoft Excel para la automatización de procesos, la optimización del manejo de información y la generación de reportes exactos y eficientes.</p>
+          <span class="edu-location">Universidad Técnica Luis Vargas Torres de Esmeraldas</span>
+
+          <!-- ICONOS CIRCULARES - CURSOS(POS 9) -->
           <div class="edu-icons">
             <img src="img/figma.png">
             <img src="img/sketch.png">
@@ -459,27 +521,52 @@
 
         <div class="edu-exp-empty"></div> <!-- POS 10 -->
 
-        <!-- Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
-        <div class="edu-exp-empty"></div> <!-- POS 11-1 -->
+<!-- 
+En caso de que haga maestria este espacio servira
+Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
+<!-- POS 11-1 -->
+<!--
+<div class="edu-exp-empty"></div>
 
-        <div class="edu-exp-box"> <!-- POSICIÓN 11 -->
-          <h3>2022 - Actualidad · AI & Chatbots Specialist</h3>
-          <p>Construcción de sistemas IA y automatización digital.</p>
-          <span class="edu-location">Freelance</span>
+<div class="edu-exp-box">
+  <h3> Analista de Datos y Automatización en Microsoft Excel</h3> <h2 id="fila1">2024</h2> 
 
-          <!-- CÍRCULOS (POS 11) -->
-          <div class="edu-icons">
-            <img src="img/figma.png">
-            <img src="img/sketch.png">
-            <img src="img/ps.png">
-            <img src="img/ai.png">
-          </div>
-        </div>
+  <p></p>
+  <span class="edu-location"></span>
 
-      </div>
-    </div>
+  <div class="edu-icons">
+    <img src="img/figma.png">
+    <img src="img/sketch.png">
+    <img src="img/ps.png">
+    <img src="img/ai.png">
   </div>
+</div>
+-->
+</div>
+</div>
+</div>
 </section>
+<script>
+  // --- Animación para el contenido de "Education & Experience" ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const eduContainer = document.querySelector(".edu-exp-container");
 
-  </body>
-  </html>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (eduContainer) {
+      observer.observe(eduContainer);
+    }
+  });
+</script>
+
+
+</body>
+</html>
