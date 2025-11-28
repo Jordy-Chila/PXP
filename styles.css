@@ -1104,5 +1104,249 @@
     border-left: 2px dashed #cfcfcf;
     z-index: 1;
   }
+}
+/* ================================
+   PORTFOLIO SECTION
+================================ */
+.portfolio-section {
+  background: #ffffff;
+  padding: 80px 10%;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  font-family: 'Sora', 'Roboto', sans-serif;
+}
 
+/* Header */
+.portfolio-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.portfolio-header p {
+  font-size: 15px;
+  color: #848caa;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.portfolio-button {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Filters */
+.portfolio-filters {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.filter-btn {
+  border: none;
+  padding: 10px 22px;
+  background: #f1f1f1;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  color: white;
+}
+
+/* Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* Individual item */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Hover Animation */
+.portfolio-item:hover img {
+  transform: scale(1.12);
+}
+
+.portfolio-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 47, 0.78);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s ease;
+  border-radius: 14px;
+}
+
+.portfolio-item:hover .portfolio-hover {
+  opacity: 1;
+}
+
+.portfolio-hover h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.portfolio-hover p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .portfolio-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+/* Animación para Portfolio */
+.portfolio-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.portfolio-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ============================
+           FOOTER
+============================ */
+.footer {
+    background: #1e1e2f;
+    color: white;
+    padding: 80px 10% 40px;
+    font-family: 'Sora', 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-item {
+    flex: 1 1 260px;
+    min-width: 200px;
+}
+
+.footer-item i {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.footer-sub {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.footer-info {
+    font-size: 17px;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background: #ffffff33;
+    margin: 30px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-copy {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-social {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-social a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ffffff55;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #ffffff;
+    color: #1e1e2f;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .footer-content {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
 }

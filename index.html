@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="img/icono.ico">
+
   <title>Mi Portafolio</title>
 
   <!-- Fuentes -->
@@ -566,6 +568,162 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
     }
   });
 </script>
+<!-- ================================
+      SECTION PORTFOLIO
+================================ -->
+<section id="portfolio" class="portfolio-section">
+
+  <div class="portfolio-header">
+    <button class="portfolio-button">
+      <span class="star">✦</span> PORTFOLIO
+    </button>
+    <h1>My Creative Work</h1>
+    <p>Explora mis proyectos desarrollados en web, móvil, UI/UX y automatización.</p>
+  </div>
+
+  <!-- MENU DE FILTROS -->
+  <div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="mobile">Mobile</button>
+    <button class="filter-btn" data-filter="uiux">UI/UX</button>
+    <button class="filter-btn" data-filter="data">Data</button>
+  </div>
+
+  <!-- GRID DE PROYECTOS -->
+  <div class="portfolio-grid">
+
+    <!-- ITEM 1 -->
+    <div class="portfolio-item" data-category="web">
+      <div class="portfolio-img">
+        <img src="img/portfolio1.jpg" alt="Web Project 1">
+        <div class="portfolio-hover">
+          <h3>Web Project</h3>
+          <p>Landing page moderna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="portfolio-item" data-category="mobile">
+      <div class="portfolio-img">
+        <img src="img/portfolio2.jpg" alt="Mobile App">
+        <div class="portfolio-hover">
+          <h3>Mobile App</h3>
+          <p>Aplicación Android</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="portfolio-item" data-category="uiux">
+      <div class="portfolio-img">
+        <img src="img/portfolio3.jpg" alt="UI UX Design">
+        <div class="portfolio-hover">
+          <h3>UI/UX</h3>
+          <p>Prototipo en Figma</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="portfolio-item" data-category="data">
+      <div class="portfolio-img">
+        <img src="img/portfolio4.jpg" alt="Data Project">
+        <div class="portfolio-hover">
+          <h3>Data Automation</h3>
+          <p>Automatización en Excel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTRO JS -->
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+
+        // activar botón seleccionado
+      document.querySelector('.filter-btn.active').classList.remove('active');
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        const category = item.dataset.category;
+
+        if (filter === "all" || filter === category) {
+          item.style.display = "block";
+          item.classList.add("show");
+        } else {
+          item.style.display = "none";
+          item.classList.remove("show");
+        }
+      });
+    });
+  });
+</script>
+<script>
+  // --- Animación para el contenido de "Portfolio" ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const portfolioContainer = document.querySelector(".portfolio-section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (portfolioContainer) {
+      observer.observe(portfolioContainer);
+    }
+  });
+</script>
+<!-- ============================
+          FOOTER SECTION
+============================ -->
+<footer class="footer footer-oval">
+
+  <div class="footer-content">
+
+    <div class="footer-item">
+      <i class="fas fa-phone"></i>
+      <p class="footer-sub">Mon–Fri from 8am to 5pm.</p>
+      <h4 class="footer-info">(+593) 98 685 526</h4>
+    </div>
+
+    <div class="footer-item">
+      <i class="fas fa-envelope"></i>
+      <p class="footer-sub">Our friendly team is here to help.</p>
+      <h4 class="footer-info">jordychila21@gmail.com</h4>
+    </div>
+
+    <div class="footer-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <p class="footer-sub">Come say hello at my office HQ.</p>
+      <h4 class="footer-info">Esmeraldas - Ecuador</h4>
+    </div>
+
+  </div>
+
+  <div class="footer-line"></div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Jordy Chila. All Rights Reserved.</p>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
 
 
 </body>
