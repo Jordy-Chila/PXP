@@ -552,7 +552,7 @@
 }
 
 /* ===========================
-   SECCIÓN SERVICE
+   SECCIÓN SERVICES
    =========================== */
 .service-section {
   background-color: #050c17;
@@ -1106,7 +1106,7 @@
   }
 }
 /* ================================
-   PORTFOLIO SECTION
+   SECCION DE PORTAFOLIO
 ================================ */
 .portfolio-section {
   background: #ffffff;
@@ -1253,6 +1253,12 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.portfolio-item {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ============================
            FOOTER
 ============================ */

@@ -28,73 +28,76 @@
     <nav class="top-menu" aria-label="Menú principal">
       <ul>
         <li><a href="#home">Inicio</a></li>
-        <li><a href="#about-section">Sobre mí</a></li>
-        <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a></li>
-        <li><a href="#">Portafolio</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
+        <!-- <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a> -->
 
-    <!-- Botón hamburguesa (móvil) -->
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
-  </header>
+          <li><a href="#about-section">Sobre mí</a></li>
+          <li><a href="#Fortalezas Técnicas">Fortalezas</a></li>
+          <li><a href="#Innovaciones">Proyectos Destacados</a></li>
+          <li><a href="#education-experience">Trayectoria</a></li>
+          <li><a href="#footer">Contacto</a></li>
+        </ul>
+      </nav>
 
-  <!-- Overlay para oscurecer fondo (no cubre navbar) -->
-  <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </header>
 
-  <!-- Barra lateral derecha (menú móvil) -->
-  <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
-    <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
-    <ul>
-     <li><a href="#home"><i class="fas fa-home"></i>Inicio</a></li>
-     <li><a href="#about-section">Sobre mí</a></li>
-     <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a></li>
-     <li><a href="#">Portafolio</a></li>
-     <li><a href="#">Servicios</a></li>
-     <li><a href="#">Contactos</a></li>
-   </ul>
- </nav>
- <script>
+    <!-- Overlay para oscurecer fondo (no cubre navbar) -->
+    <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+    <!-- Barra lateral derecha (menú móvil) -->
+    <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
+      <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
+      <ul>
+       <li><a href="#home"><i class="fas fa-home"></i>Inicio</a></li>
+       <!-- <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a> -->
+         <li><a href="#about-section">Sobre mí</a></li>
+
+         <li><a href="#">Portafolio</a></li>
+         <li><a href="#">Servicios</a></li>
+         <li><a href="#">Contactos</a></li>
+       </ul>
+     </nav>
+     <script>
   // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
-  const hamburger = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('side-menu');
-  const overlay = document.getElementById('overlay');
-  const closeBtn = document.getElementById('closeMenu');
+      const hamburger = document.getElementById('hamburger');
+      const sideMenu = document.getElementById('side-menu');
+      const overlay = document.getElementById('overlay');
+      const closeBtn = document.getElementById('closeMenu');
 
-  function openMenu() {
-    sideMenu.classList.add('active');
-    overlay.classList.add('active');
-    document.body.classList.add('no-scroll');
-    hamburger.setAttribute('aria-expanded', 'true');
-    sideMenu.setAttribute('aria-hidden', 'false');
-    overlay.setAttribute('aria-hidden', 'false');
-  }
-  function closeMenu() {
-    sideMenu.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-    hamburger.setAttribute('aria-expanded', 'false');
-    sideMenu.setAttribute('aria-hidden', 'true');
-    overlay.setAttribute('aria-hidden', 'true');
-  }
+      function openMenu() {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.classList.add('no-scroll');
+        hamburger.setAttribute('aria-expanded', 'true');
+        sideMenu.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+      }
+      function closeMenu() {
+        sideMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        hamburger.setAttribute('aria-expanded', 'false');
+        sideMenu.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
 
-  hamburger.addEventListener('click', () => {
-    if (sideMenu.classList.contains('active')) {
+      hamburger.addEventListener('click', () => {
+        if (sideMenu.classList.contains('active')) {
     closeMenu(); // 🔹 Si ya está abierto, lo cierra
   } else {
     openMenu();  // 🔹 Si está cerrado, lo abre
   }
 });
 
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
 
   // Cerrar con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
-  });
-</script>
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
+      });
+    </script>
 
 <!-- SECCION HOME -->
 <section id="home" class="home">
@@ -252,69 +255,15 @@
   </div>
 </section>
 
-<!-- SECCIÓN SERVICES -->
-<section id="service" class="service-section">
-  <div class="contex-Service">
-    <button class="service-button">
-      <span class="star">✦</span> SERVICES
-    </button>
-    <h1>What I Offer</h1>
-    <p>
-      Transformo ideas en soluciones funcionales: desarrollo de software, sitios web, y sistemas inteligentes adaptados a tus necesidades.
-    </p>
-  </div>
-
-  <div class="info-Service">
-    <div class="service-card">
-      <i class="fas fa-code"></i>
-      <h3>Web Development</h3>
-      <p>Desarrollo sitios web modernos, rápidos y optimizados para cualquier dispositivo.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>Mobile Apps</h3>
-      <p>Aplicaciones móviles intuitivas y de alto rendimiento en Android y iOS.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fas fa-brain"></i>
-      <h3>AI Integration</h3>
-      <p>Integro soluciones con inteligencia artificial para automatizar y optimizar procesos.</p>
-    </div>
-  </div>
-</section>
-<script>
-  // --- Animación para el contenido de "Service" ---
-  document.addEventListener("DOMContentLoaded", () => {
-    const contexService = document.querySelector(".contex-Service");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    if (contexService) {
-      observer.observe(contexService);
-    }
-  });
-</script>
-
 <!-- SECCIÓN SKILLS & AWARDS -->
-<section id="skills-awards" class="skills-awards-section">
+<section id="Fortalezas Técnicas" class="skills-awards-section">
   <div class="skills-awards-container">
     <button class="skills-awards-button">
       <span class="star">✦</span> SKILLS & AWARDS
     </button>
-    <h1>Masterful Talents and Honors</h1>
+    <h1>Capacidades y Reconocimientos</h1>
     <p>
-      We craft digital, graphic and dimensional thinking, to create category leading brand 
-      experiences that have meaning.
+      Certificaciones que validan mi experiencia, fortalecen mis capacidades y demuestran la calidad de mi preparación.
     </p>
 
     <div class="skills-awards-content">
@@ -435,6 +384,70 @@
   window.addEventListener("resize", updateSkillCircles);
 </script>
 
+<!-- SECCIÓN SERVICES -->
+<section id="Innovaciones" class="service-section">
+  <div class="contex-Service">
+    <button class="service-button">
+      <span class="star">✦</span> Innovaciones
+    </button>
+    <h1>Proyectos Destacados</h1>
+    <p>
+      Transformo ideas en soluciones funcionales: desarrollo de software, sitios web, y sistemas inteligentes adaptados a tus necesidades.
+    </p>
+  </div>
+
+  <div class="info-Service">
+    <div class="service-card">
+      <i class="fas fa-code"></i>
+      <h3>Web Development</h3>
+      <p>Desarrollo sitios web modernos, rápidos y optimizados para cualquier dispositivo.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Mobile Apps</h3>
+      <p>Aplicaciones móviles intuitivas y de alto rendimiento en Android y iOS.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-brain"></i>
+      <h3>AI Integration</h3>
+      <p>Integro soluciones con inteligencia artificial para automatizar y optimizar procesos.</p>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.getElementById('portfolio').scrollIntoView({
+        behavior: 'smooth'
+      })
+    })
+  })
+</script>
+
+<script>
+  // --- Animación para el contenido de "Service" ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const contexService = document.querySelector(".contex-Service");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (contexService) {
+      observer.observe(contexService);
+    }
+  });
+</script>
+
+
 <!-- ===========================================
      SECTION EDUCATION & EXPERIENCE
 =========================================== -->
@@ -445,7 +458,7 @@
       <span class="star">✦</span> Education & Experience
     </button>
 
-    <h1>Education & Experience</h1>
+    <h1>Educación y experiencia</h1>
     <p class="edu-exp-description">
       Una trayectoria que combina formación académica y experiencia práctica en proyectos reales.
     </p>
@@ -564,7 +577,7 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
   });
 </script>
 <!-- ================================
-      SECTION PORTFOLIO
+      SECCION DE PORTAFOLIO
 ================================ -->
 <section id="portfolio" class="portfolio-section">
 
@@ -582,56 +595,55 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
     <button class="filter-btn" data-filter="web">Web</button>
     <button class="filter-btn" data-filter="mobile">Mobile</button>
     <button class="filter-btn" data-filter="uiux">UI/UX</button>
-    <button class="filter-btn" data-filter="data">Data</button>
   </div>
 
   <!-- GRID DE PROYECTOS -->
   <div class="portfolio-grid">
 
     <!-- ITEM 1 -->
-    <div class="portfolio-item" data-category="web">
+    <a href="https://sove.ec/" target="_blank" class="portfolio-item" data-category="web">
       <div class="portfolio-img">
-        <img src="img/portfolio1.jpg" alt="Web Project 1">
+        <img src="img/pfweb1.png" alt="Web Project 1">
         <div class="portfolio-hover">
-          <h3>Web Project</h3>
-          <p>Landing page moderna</p>
-        </div>
-      </div>
-    </div>
+         <h3>S.O.V.E</h3>
+         <p>Sindicato Obreros del Volante de Esmeraldas</p>
+       </div>
+     </div>
+   </a>
 
-    <!-- ITEM 2 -->
-    <div class="portfolio-item" data-category="mobile">
-      <div class="portfolio-img">
-        <img src="img/portfolio2.jpg" alt="Mobile App">
-        <div class="portfolio-hover">
-          <h3>Mobile App</h3>
-          <p>Aplicación Android</p>
-        </div>
-      </div>
-    </div>
+   <!-- ITEM 2 -->
+   <a href="https://utlvte-carrerati.github.io/bot.IA/" target="_blank" class="portfolio-item" data-category="web">
+    <div class="portfolio-img">
+      <img src="img/pfweb2.png" alt="Web Project 1">
+      <div class="portfolio-hover">
+       <h3>F.A.C.I</h3>
+       <p>Facultad de Ingenierías</p>
+     </div>
+   </div>
+ </a>
 
-    <!-- ITEM 3 -->
-    <div class="portfolio-item" data-category="uiux">
-      <div class="portfolio-img">
-        <img src="img/portfolio3.jpg" alt="UI UX Design">
-        <div class="portfolio-hover">
-          <h3>UI/UX</h3>
-          <p>Prototipo en Figma</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ITEM 4 -->
-    <div class="portfolio-item" data-category="data">
-      <div class="portfolio-img">
-        <img src="img/portfolio4.jpg" alt="Data Project">
-        <div class="portfolio-hover">
-          <h3>Data Automation</h3>
-          <p>Automatización en Excel</p>
-        </div>
-      </div>
+ <!-- ITEM 3 -->
+ <a href="https://drive.google.com/file/d/1PIoKya5HCV_CuRKLbXSFnBRLW8jukydc/view?usp=sharing" target="_blank" class="portfolio-item" data-category="uiux">
+  <div class="portfolio-img">
+    <img src="img/pfui.png" alt="UI UX Design">
+    <div class="portfolio-hover">
+      <h3>C.A.I</h3>
+      <p>Chat Bot</p>
     </div>
   </div>
+</a>
+
+<!-- ITEM 4 -->
+<div class="portfolio-item" data-category="mobile">
+  <div class="portfolio-img">
+    <img src="img/portfolio4.jpg" alt="Data Project">
+    <div class="portfolio-hover">
+      <h3>Data Automation</h3>
+      <p>Automatización en Excel</p>
+    </div>
+  </div>
+</div>
+</div>
 </section>
 
 <!-- FILTRO JS -->
@@ -682,26 +694,26 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
 <!-- ============================
           FOOTER SECTION
 ============================ -->
-<footer class="footer footer-oval">
+<footer id= "footer" class="footer footer-oval">
 
   <div class="footer-content">
 
     <div class="footer-item">
       <i class="fas fa-phone"></i>
-      <p class="footer-sub">Mon–Fri from 8am to 5pm.</p>
+      <p class="footer-sub">Lunes a viernes de 8am a 17pm.</p>
       <h4 class="footer-info">(+593) 98 685 526</h4>
     </div>
 
     <div class="footer-item">
       <i class="fas fa-envelope"></i>
-      <p class="footer-sub">Our friendly team is here to help.</p>
+      <p class="footer-sub">Nuestro amable equipo está aquí para ayudar.</p>
       <h4 class="footer-info">jordychila21@gmail.com</h4>
     </div>
 
     <div class="footer-item">
       <i class="fas fa-map-marker-alt"></i>
-      <p class="footer-sub">Come say hello at my office HQ.</p>
-      <h4 class="footer-info">Esmeraldas - Ecuador</h4>
+      <p class="footer-sub">Ubicacion</p>
+      <h4 class="footer-info">Quito - Ecuador</h4>
     </div>
 
   </div>
