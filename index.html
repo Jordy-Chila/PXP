@@ -34,6 +34,7 @@
           <li><a href="#Fortalezas Técnicas">Fortalezas</a></li>
           <li><a href="#Innovaciones">Proyectos Destacados</a></li>
           <li><a href="#education-experience">Trayectoria</a></li>
+          <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
           <li><a href="#footer">Contacto</a></li>
         </ul>
       </nav>
@@ -52,13 +53,63 @@
        <li><a href="#home">Inicio</a></li>
        <!-- <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a> -->
 
-        <li><a href="#about-section">Sobre mí</a></li>
-        <li><a href="#Fortalezas Técnicas">Fortalezas</a></li>
-        <li><a href="#Innovaciones">Proyectos Destacados</a></li>
-        <li><a href="#education-experience">Trayectoria</a></li>
-        <li><a href="#footer">Contacto</a></li>
+          <li><a href="#about-section">Sobre mí</a></li>
+          <li><a href="#Fortalezas Técnicas">Fortalezas</a></li>
+          <li><a href="#Innovaciones">Proyectos Destacados</a></li>
+          <li><a href="#education-experience">Trayectoria</a></li>
+          <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
+          <li><a href="#footer">Contacto</a></li>
       </ul>
     </nav>
+
+
+    <script>
+  // Ampliar tu script para que cualquier elemento con data-filter active el filtro correspondiente
+      function applyFilter(filter) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.portfolio-item');
+
+  // Activar botón correspondiente
+        buttons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.filter === filter);
+        });
+
+  // Mostrar/Ocultar proyectos
+        items.forEach(item => {
+          const category = item.dataset.category;
+
+          if (filter === "all" || category === filter) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+
+// --- CLICK EN SERVICE-CARDS ---
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const targetFilter = card.getAttribute('data-target');
+
+    // Scroll suave al portfolio
+          document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+
+    // Aplicar filtro después del scroll
+          setTimeout(() => applyFilter(targetFilter), 600);
+        });
+      });
+
+// --- CLICK EN ENLACES DEL MENÚ ---
+      document.querySelectorAll('a[data-filter]').forEach(link => {
+        link.addEventListener('click', () => {
+          const filter = link.getAttribute('data-filter');
+
+    // Aplicar el filtro inmediatamente
+          setTimeout(() => applyFilter(filter), 300);
+        });
+      });
+    </script>
+
     <script>
   // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
       const hamburger = document.getElementById('hamburger');
@@ -396,36 +447,62 @@
       Transformo ideas en soluciones funcionales: desarrollo de software, sitios web, y sistemas inteligentes adaptados a tus necesidades.
     </p>
   </div>
-
   <div class="info-Service">
-    <div class="service-card">
+    <div class="service-card" data-target="web">
       <i class="fas fa-code"></i>
       <h3>Web Development</h3>
-      <p>Desarrollo sitios web modernos, rápidos y optimizados para cualquier dispositivo.</p>
+      <p>Desarrollo sitios web modernos, rápidos y optimizados.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" data-target="mobile">
       <i class="fas fa-mobile-alt"></i>
       <h3>Mobile Apps</h3>
-      <p>Aplicaciones móviles intuitivas y de alto rendimiento en Android y iOS.</p>
+      <p>Aplicaciones intuitivas en Android y iOS.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" data-target="uiux">
       <i class="fas fa-brain"></i>
       <h3>AI Integration</h3>
-      <p>Integro soluciones con inteligencia artificial para automatizar y optimizar procesos.</p>
+      <p>Soluciones inteligentes con IA.</p>
     </div>
   </div>
 </section>
+
 <script>
   document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => {
-      document.getElementById('portfolio').scrollIntoView({
-        behavior: 'smooth'
-      })
-    })
-  })
+    // 1. Obtener el filtro que le corresponde
+      const targetFilter = card.getAttribute('data-target');
+
+    // 2. Bajar a la sección portfolio
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+
+    // 3. Activar el filtro automáticamente después del scroll
+      setTimeout(() => {
+        const buttons = document.querySelectorAll('.filter-btn');
+
+      // Marcar el botón como activo
+        buttons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.filter === targetFilter);
+        });
+
+      // 4. Filtrar los proyectos
+        const items = document.querySelectorAll('.portfolio-item');
+
+        items.forEach(item => {
+          const category = item.dataset.category;
+
+          if (targetFilter === "all" || category === targetFilter) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+    }, 600); // esperar a que termine el scroll
+    });
+  });
 </script>
+
 
 <script>
   // --- Animación para el contenido de "Service" ---
@@ -584,7 +661,7 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
 
   <div class="portfolio-header">
     <button class="portfolio-button">
-      <span class="star">✦</span> PORTFOLIO
+      <span class="star">✦</span> PORTAFOLIO
     </button>
     <h1>My Creative Work</h1>
     <p>Explora mis proyectos desarrollados en web, móvil, UI/UX y automatización.</p>
@@ -637,10 +714,10 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
 <!-- ITEM 4 -->
 <div class="portfolio-item" data-category="mobile">
   <div class="portfolio-img">
-    <img src="img/portfolio4.jpg" alt="Data Project">
+    <img src="img/pfmo.png" alt="Data Project">
     <div class="portfolio-hover">
-      <h3>Data Automation</h3>
-      <p>Automatización en Excel</p>
+      <h3>AppAR</h3>
+      <p>Plataforma de Realidad Aumentada diseñada para integrar contenido digital en el entorno real de forma intuitiva y dinámica</p>
     </div>
   </div>
 </div>
