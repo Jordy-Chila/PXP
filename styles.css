@@ -667,8 +667,8 @@
   transform: translateY(0);
 }
 /* ===========================
-   SKILLS & AWARDS
-   =========================== */
+  SECCIÓN SKILLS & AWARDS
+=========================== */
 .skills-awards-section {
   background: #fff;
   color: #1a1a1a;
@@ -709,13 +709,15 @@
   margin: 0 auto 60px auto;
 }
 
+/* CONTENEDORES PRINCIPALES */
 .skills-awards-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 60px;
-  align-items: center;
+  flex-wrap: nowrap;
 }
+
 .skills-awards-container {
   opacity: 0;
   transform: translateY(50px);
@@ -728,124 +730,172 @@
   transform: translateY(0);
 }
 
-
-/* ---- CÍRCULOS DE SKILLS ---- */
-.skills-circles {
+/* ====================================================
+     COLUMNA IZQUIERDA → SKILLS CON GRID 4×4
+==================================================== */
+.skills-circles-column {
+  flex: 1 1 50%;
+  max-width: 50%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  flex: 1 1 500px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
-.circle-skill {
+/* Scroll minimalista */
+.skills-circles-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.skills-circles-column::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.skills-circles-column::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* GRID DE SKILLS */
+.skills-circles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+}
+
+/* CÍRCULO SKILL */
+.skills-circles-grid .circle-skill {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 47%;
-  width: 130px;
-  height: 140px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
 }
 
-.circle-skill img {
-  width: 38px;
-  height: 38px;
+.skills-circles-grid .circle-skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(124, 111, 214, 0.25);
+}
+
+.skills-circles-grid .circle-skill img {
+  width: 42px;
+  height: 42px;
   margin-bottom: 8px;
 }
 
-.circle-skill h4 {
+.skills-circles-grid .circle-skill h4 {
   font-size: 15px;
   font-weight: 600;
   color: #333;
+  margin: 0;
 }
 
-.circle-skill span {
+.skills-circles-grid .circle-skill span {
+  margin-top: 4px;
+  font-size: 14px;
   color: #848caa;
   font-weight: 500;
-  font-size: 14px;
-  margin-top: 4px;
 }
 
-.circle-skill.large {
-  width: 280px;
-  height: 100px;
-  border-radius: 50px;
-  flex-direction: column;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-/* ---- PREMIOS ---- */
+/* ====================================================
+        COLUMNA DERECHA → AWARDS (SOLO IMAGEN)
+==================================================== */
 .awards-column {
-  flex: 1 1 400px;
+  flex: 1 1 50%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
+/* award-main AHORA SOLO CONTIENE UNA IMAGEN */
 .award-main {
-  display: flex;
-  align-items: center;
-  background: #f9f9f9;
-  border-radius: 16px;
-  padding: 25px 40px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  text-align: left;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 
-.award-years h2 {
-  font-size: 50px;
-  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
-  font-weight: 700;
-  text-align: center;
+.award-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.award-years p {
-  font-size: 12px;
-  font-weight: 600;
-  color: #999;
-  text-align: center;
+/* Award-main clicable */
+.award-main-link {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    max-width: 420px;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.award-text {
-  margin-left: 20px;
+/* MISMA ANIMACIÓN QUE LOS BADGES */
+.award-main-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.award-text h3 {
-  font-size: 20px;
-  font-weight: 700;
+/* La imagen dentro mantiene su estilo */
+.award-main {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.award-text p {
-  color: #848caa;
-  font-size: 14px;
+.award-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.stars {
-  color: #ffb400;
-  font-size: 18px;
-  margin-top: 4px;
-}
 
+/* ================================
+   BADGES CLICABLES
+================================ */
 .award-badges {
   display: flex;
   gap: 20px;
 }
 
-.badge {
+.award-badges a.badge {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   padding: 10px 20px;
   text-align: center;
   font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.award-badges a.badge:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .badge-top {
@@ -853,8 +903,8 @@
   background: #ffb400;
   border-radius: 6px;
   padding: 2px 6px;
-  display: inline-block;
   margin-bottom: 6px;
+  display: inline-block;
 }
 
 .badge-mid {
@@ -868,6 +918,38 @@
   font-weight: 700;
   margin-top: 4px;
 }
+
+/* ====================================================
+                     RESPONSIVE
+==================================================== */
+@media (max-width: 991px) {
+  .skills-awards-content {
+    flex-wrap: wrap;
+  }
+
+  .skills-circles-column,
+  .awards-column {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .skills-circles-column {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+
+  .skills-circles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-circles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ===========================================
    SECTION EDUCATION & EXPERIENCE
 =========================================== */
