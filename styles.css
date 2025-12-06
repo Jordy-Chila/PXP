@@ -666,10 +666,11 @@
   opacity: 1;
   transform: translateY(0);
 }
+
 /* ===========================
   SECCIÓN SKILLS & AWARDS
 =========================== */
-.skills-awards-section {
+.certificado-awards-section {
   background: #fff;
   color: #1a1a1a;
   padding: 100px 10%;
@@ -695,14 +696,14 @@
   transition: all 0.3s ease;
 }
 
-.skills-awards-section h1 {
+.certificado-awards-section h1 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 12px;
   font-family: 'Poppins', sans-serif;
 }
 
-.skills-awards-section p {
+.certificado-awards-section p {
   color: #848caa;
   font-size: 16px;
   max-width: 780px;
@@ -718,14 +719,14 @@
   flex-wrap: nowrap;
 }
 
-.skills-awards-container {
+.certificado-awards-container {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   will-change: opacity, transform;
 }
 
-.skills-awards-container.visible {
+.certificado-awards-container.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -733,80 +734,69 @@
 /* ====================================================
      COLUMNA IZQUIERDA → SKILLS CON GRID 4×4
 ==================================================== */
-.skills-circles-column {
-  flex: 1 1 50%;
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-  max-height: 520px;
-  overflow-y: auto;
-  padding-right: 10px;
-}
 
-/* Scroll minimalista */
-.skills-circles-column::-webkit-scrollbar {
-  width: 6px;
-}
-
-.skills-circles-column::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.skills-circles-column::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
-
-/* GRID DE SKILLS */
 .skills-circles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  gap: 18px; /* Espaciado compacto */
   justify-items: center;
-  align-items: center;
+  align-items: start;
   width: 100%;
   max-width: 650px;
 }
 
-/* CÍRCULO SKILL */
-.skills-circles-grid .circle-skill {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
+/* Contenedor individual (círculo + texto) */
+.skill-box {
+  text-align: center;
+  width: 130px;
+  height: 170px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Círculo */
+.circle-skill {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 90%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  margin-bottom: 10px; /* Separación letras */
   text-decoration: none;
   color: inherit;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  cursor: pointer;
 }
 
-.skills-circles-grid .circle-skill:hover {
+.circle-skill:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(124, 111, 214, 0.25);
 }
 
-.skills-circles-grid .circle-skill img {
+/* Imagen dentro del círculo */
+.circle-skill img {
   width: 100px;
-  height:100px;
-  margin: 0 auto;
+  height: 100px;
+  display: block;
 }
 
-.skills-circles-grid .circle-skill h4 {
-  font-size: 9px;
+/* Texto debajo del círculo */
+.skill-label {
+  margin-top: 10px;   /* Separación perfecta */
+  font-size: 10px;
   font-weight: 600;
   color: #333;
-  margin: 0;
+  line-height: 13px;
+  max-width: 120px;
+  text-align: center;
 }
 
 /* ====================================================
-        COLUMNA DERECHA → AWARDS (SOLO IMAGEN)
+        COLUMNA DERECHA → AWARDS
 ==================================================== */
 .awards-column {
   flex: 1 1 50%;
@@ -817,7 +807,7 @@
   gap: 30px;
 }
 
-/* award-main AHORA SOLO CONTIENE UNA IMAGEN */
+/* award-main */
 .award-main {
   width: 100%;
   max-width: 420px;
@@ -825,6 +815,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .award-main-img {
@@ -834,7 +825,6 @@
   display: block;
 }
 
-/* Award-main clicable */
 .award-main-link {
   display: block;
   text-decoration: none;
@@ -844,72 +834,38 @@
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* MISMA ANIMACIÓN QUE LOS BADGES */
 .award-main-link:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* La imagen dentro mantiene su estilo */
-.award-main {
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.award-main-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-/* ================================
-   BADGES CLICABLES
-================================ */
+/* BADGES */
 .award-badges {
   display: flex;
   gap: 24px;
 }
 
-/* Badge clicable */
 .badge-img {
   display: block;
-  width: 120px;      /* Tamaño tipo ejemplo G2 */
-  height: 200px;     /* Proporción vertical */
+  width: 120px;
+  height: 200px;
   overflow: hidden;
-  border: none;
-  padding: 0;
-  margin: 0;
   cursor: pointer;
   border-radius: 16px;
   background: transparent;
-
-  /* Sin sombras, sin bordes */
-  box-shadow: 0 0 0 transparent;
   transition: transform 0.25s ease;
 }
 
-/* Hover limpio (solo movimiento) */
 .badge-img:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 0 transparent; /* sigue sin sombra */
 }
 
-/* Imagen ajustada sin distorsión */
 .badge-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-
-  /* sin bordes visibles */
   border-radius: 16px;
 }
-
 
 /* ====================================================
                      RESPONSIVE
@@ -923,12 +879,6 @@
   .awards-column {
     max-width: 100%;
     flex-basis: 100%;
-  }
-
-  .skills-circles-column {
-    max-height: none;
-    overflow-y: visible;
-    padding-right: 0;
   }
 
   .skills-circles-grid {
