@@ -735,40 +735,44 @@
      COLUMNA IZQUIERDA → SKILLS CON GRID 4×4
 ==================================================== */
 
+/* GRID general */
 .skills-circles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px; /* Espaciado compacto */
+  gap: 10px 20px; /* ↓ menos espacio vertical, más compacto */
   justify-items: center;
   align-items: start;
   width: 100%;
   max-width: 650px;
 }
 
-/* Contenedor individual (círculo + texto) */
+/* Caja individual */
 .skill-box {
-  text-align: center;
   width: 130px;
-  height: 170px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  /* ↓ evita que deje un hueco enorme entre filas */
+  height: auto;
 }
 
 /* Círculo */
 .circle-skill {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 90%;
+  border-radius: 100%;   /* ← círculo perfecto */
   width: 120px;
   height: 120px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px; /* Separación letras */
-  text-decoration: none;
-  color: inherit;
+
+  margin-bottom: 14px;  /* ← MÁS ESPACIO antes del texto */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
@@ -777,23 +781,27 @@
   box-shadow: 0 8px 20px rgba(124, 111, 214, 0.25);
 }
 
-/* Imagen dentro del círculo */
+/* Imagen */
 .circle-skill img {
-  width: 100px;
-  height: 100px;
-  display: block;
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
 }
 
-/* Texto debajo del círculo */
+/* Texto */
 .skill-label {
-  margin-top: 10px;   /* Separación perfecta */
-  font-size: 10px;
+  margin-top: 6px; 
+  /* ↑ puedes ajustar entre 4px - 10px */
+  
+  font-size: 12px;
   font-weight: 600;
   color: #333;
-  line-height: 13px;
+  line-height: 15px;
+
   max-width: 120px;
   text-align: center;
 }
+
 
 /* ====================================================
         COLUMNA DERECHA → AWARDS
