@@ -793,23 +793,16 @@
 }
 
 .skills-circles-grid .circle-skill img {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 8px;
+  width: 100px;
+  height:100px;
+  margin: 0 auto;
 }
 
 .skills-circles-grid .circle-skill h4 {
-  font-size: 15px;
+  font-size: 9px;
   font-weight: 600;
   color: #333;
   margin: 0;
-}
-
-.skills-circles-grid .circle-skill span {
-  margin-top: 4px;
-  font-size: 14px;
-  color: #848caa;
-  font-weight: 500;
 }
 
 /* ====================================================
@@ -845,8 +838,9 @@
 .award-main-link {
     display: block;
     text-decoration: none;
+    border-radius: 20px;
     width: 100%;
-    max-width: 420px;
+    max-width: 280px;
     transition: transform .25s ease, box-shadow .25s ease;
 }
 
