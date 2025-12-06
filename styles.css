@@ -790,14 +790,13 @@
 
 /* Texto */
 .skill-label {
-  margin-top: 6px; 
+  margin-top: 0px; 
   /* ↑ puedes ajustar entre 4px - 10px */
   
   font-size: 12px;
   font-weight: 600;
   color: #333;
   line-height: 15px;
-
   max-width: 120px;
   text-align: center;
 }
