@@ -28,7 +28,7 @@
   }
 
 /* ===========================
-   NAVBAR
+   NAVBAR 
    =========================== */
    .navbar {
     height: var(--navbar-height);
@@ -50,23 +50,80 @@
     display: block;
   }
 
-/* Menú superior (escritorio) */
-.top-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+/* ----------------------------------------------------
+   NAVBAR SUPERIOR — STICKY + DISEÑO MODERNO
+---------------------------------------------------- */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Contenedor del menú superior */
+.top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.top-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces normales */
 .top-menu ul li a {
-  color: #ccc;
+  color: #d9d9d9;
   text-decoration: none;
   font-size: 15px;
-  transition: color .2s;
+  letter-spacing: 0.4px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
+/* Hover elegante */
 .top-menu ul li a:hover {
-  color: #fff;
+  color: #ffffff;
+}
+
+/* --------------------------------------------
+   TEXTO ACTIVO CON DEGRADADO (SIN LÍNEA)
+--------------------------------------------- */
+
+.top-menu ul li a.active-link {
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff7a00, #ff3e6b, #ff008c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Seguridad para evitar conflictos */
+.top-menu ul li {
+  position: relative;
+}
+
+/* Ocultar este menú en móviles */
+@media (max-width: 992px) {
+  header {
+    background: #141414;
+    backdrop-filter: none;
+  }
+
+  .top-menu {
+    display: none;
+  }
 }
 
 /* Botón hamburguesa */
@@ -82,55 +139,71 @@
 /* ===========================
    SIDE MENU (móvil)
    =========================== */
-   .side-menu {
-    position: fixed;
-    top: var(--navbar-height);
-    right: -280px;
-    width: 280px;
-    height: calc(100% - var(--navbar-height));
-    background-color: #1e1e2f;
-    padding: 22px 18px;
-    transition: right .36s cubic-bezier(.2,.9,.2,1);
-    z-index: 1500;
-    box-shadow: -12px 0 30px rgba(0,0,0,0.15);
-    border-left: 1px solid rgba(255,255,255,0.02);
-  }
+.side-menu {
+  position: fixed;
+  top: var(--navbar-height);
+  right: -280px;
+  width: 280px;
+  height: calc(100% - var(--navbar-height));
+  background-color: #1e1e2f;
+  padding: 22px 18px;
+  transition: right .36s cubic-bezier(.2,.9,.2,1);
+  z-index: 1500;
+  box-shadow: -12px 0 30px rgba(0,0,0,0.15);
+  border-left: 1px solid rgba(255,255,255,0.02);
+}
 
-  .side-menu.active {
-    right: 0;
-  }
+.side-menu.active {
+  right: 0;
+}
 
-  .side-menu .close-btn {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: transparent;
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
+.side-menu .close-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-  .side-menu ul {
-    list-style: none;
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    padding-left: 0;
-  }
+/* Lista del menú móvil */
+.side-menu ul {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 0;
+}
 
-  .side-menu ul li a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 18px;
-  }
+/* Enlaces normales */
+.side-menu ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
 
-  .side-menu ul li a:hover {
-    color: #fff;
-  }
+/* Hover */
+.side-menu ul li a:hover {
+  color: #ffffff;
+}
 
-/* Overlay */
+/* ===========================
+   TEXTO ACTIVO CON DEGRADADO
+   =========================== */
+.side-menu ul li a.active-link {
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff7a00, #ff3e6b, #ff008c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+   Overlay del menú móvil
+   =========================== */
 .overlay {
   position: fixed;
   top: var(--navbar-height);
@@ -148,6 +221,7 @@
   opacity: 1;
   visibility: visible;
 }
+
 
 /* ===========================
    SECCIÓN HOME
