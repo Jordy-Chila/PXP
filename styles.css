@@ -135,6 +135,113 @@ header {
   color: #fff;
   cursor: pointer;
 }
+/* ============================================================
+   BOTÓN CURRÍCULUM — ESTILO DORADO + SPARKLES (tipo GIF)
+   ============================================================ */
+.curriculum-btn {
+  position: relative;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  color: #ffdd8a; /* dorado suave */
+  text-decoration: none;
+
+  background: linear-gradient(90deg, #b88a00, #ffd56b, #ffb300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  border: 1px solid rgba(255, 215, 130, 0.45);
+  border-radius: 28px;
+
+  transition: 0.3s ease;
+}
+
+/* ------- SPARKLES (puntos brillantes tipo GIF) ------- */
+.sparkle::before,
+.sparkle::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff 0%, #ffe9a6 40%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkleBlink 2.4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Sparkle 1 */
+.sparkle::before {
+  top: -10px;
+  left: 12px;
+  animation-delay: .3s;
+}
+
+/* Sparkle 2 */
+.sparkle::after {
+  bottom: -12px;
+  right: 10px;
+  animation-delay: 1s;
+}
+
+/* Crear más sparkles realistas */
+.sparkle span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(circle, #fff 0%, #ffe7a2 45%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkleBlink 2.4s infinite;
+}
+
+.sparkle span:nth-child(1) { top: -8px; right: 40%; animation-delay: 1.4s; }
+.sparkle span:nth-child(2) { bottom: -8px; left: 35%; animation-delay: .9s; }
+.sparkle span:nth-child(3) { top: 5px; left: -12px; animation-delay: 2s; }
+.sparkle span:nth-child(4) { bottom: 4px; right: -12px; animation-delay: 1.7s; }
+
+@keyframes sparkleBlink {
+  0% { opacity: 0; transform: scale(0.3); }
+  35% { opacity: 1; transform: scale(1); }
+  70% { opacity: 0; transform: scale(0.3); }
+  100% { opacity: 0; }
+}
+
+/* ---------------------------------- */
+/* EFECTO HOVER */
+.curriculum-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(255, 215, 130, 0.8);
+  filter: drop-shadow(0 0 6px rgba(255, 215, 130, 0.4));
+}
+
+/* ===========================================
+   FIX: El botón "Currículum" NO debe recibir
+   el degradado de .active-link
+============================================= */
+
+/* 1) Evitar color degradado cuando obtiene active-link */
+.top-menu a.curriculum-btn.active-link {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: inherit !important;
+  color: #ffdd8a !important; /* su color normal */
+}
+
+/* 2) Evitar que el hover del menú lo afecte */
+.top-menu a.curriculum-btn:hover {
+  color: #ffdd8a !important;
+}
+
+/* 3) Evitar que JS le cambie el color por scroll */
+.top-menu a.curriculum-btn {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: inherit !important;
+  color: #ffdd8a !important; 
+}
 
 /* ===========================
    SIDE MENU (móvil)

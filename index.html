@@ -28,31 +28,8 @@
     <nav class="top-menu" aria-label="Menú principal">
       <ul>
         <li><a href="#home">Inicio</a></li>
-        <!-- <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a> -->
-
-          <li><a href="#about-section">Sobre mí</a></li>
-          <li><a href="#education-experience">Trayectoria</a></li>
-          <li><a href="#Certificados">Certificados</a></li>
-          <li><a href="#Innovaciones">Proyectos Destacados</a></li>
-          <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
-          <li><a href="#footer">Contactos</a></li>
-        </ul>
-      </nav>
-
-      <!-- Botón hamburguesa (móvil) -->
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    </header>
-
-    <!-- Overlay para oscurecer fondo (no cubre navbar) -->
-    <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
-
-    <!-- Barra lateral derecha (menú móvil) -->
-    <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
-      <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
-      <ul>
-       <li><a href="#home">Inicio</a></li>
-       <!-- <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank">Currículum</a> -->
-
+        <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank" class="curriculum-btn sparkle">Currículum</a></li>
+        
         <li><a href="#about-section">Sobre mí</a></li>
         <li><a href="#education-experience">Trayectoria</a></li>
         <li><a href="#Certificados">Certificados</a></li>
@@ -62,147 +39,170 @@
       </ul>
     </nav>
 
+    <!-- Botón hamburguesa (móvil) -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
 
-    <script>
+<!-- Overlay para oscurecer fondo (no cubre navbar) -->
+<div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+<!-- Barra lateral derecha (menú móvil) -->
+<nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
+  <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
+  <ul>
+   
+   <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank" class="curriculum-btn sparkle">Currículum</a></li>
+   <li><a href="#home">Inicio</a></li>
+   <li><a href="#about-section">Sobre mí</a></li>
+   <li><a href="#education-experience">Trayectoria</a></li>
+   <li><a href="#Certificados">Certificados</a></li>
+   <li><a href="#Innovaciones">Proyectos Destacados</a></li>
+   <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
+   <li><a href="#footer">Contactos</a></li>
+ </ul>
+</nav>
+
+
+<script>
   // Ampliar tu script para que cualquier elemento con data-filter active el filtro correspondiente
-      function applyFilter(filter) {
-        const buttons = document.querySelectorAll('.filter-btn');
-        const items = document.querySelectorAll('.portfolio-item');
+  function applyFilter(filter) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.portfolio-item');
 
   // Activar botón correspondiente
-        buttons.forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.filter === filter);
-        });
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
 
   // Mostrar/Ocultar proyectos
-        items.forEach(item => {
-          const category = item.dataset.category;
+    items.forEach(item => {
+      const category = item.dataset.category;
 
-          if (filter === "all" || category === filter) {
-            item.style.display = "block";
-          } else {
-            item.style.display = "none";
-          }
-        });
+      if (filter === "all" || category === filter) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
       }
+    });
+  }
 
 // --- CLICK EN SERVICE-CARDS ---
-      document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const targetFilter = card.getAttribute('data-target');
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const targetFilter = card.getAttribute('data-target');
 
     // Scroll suave al portfolio
-          document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
 
     // Aplicar filtro después del scroll
-          setTimeout(() => applyFilter(targetFilter), 600);
-        });
-      });
+      setTimeout(() => applyFilter(targetFilter), 600);
+    });
+  });
 
 // --- CLICK EN ENLACES DEL MENÚ ---
-      document.querySelectorAll('a[data-filter]').forEach(link => {
-        link.addEventListener('click', () => {
-          const filter = link.getAttribute('data-filter');
+  document.querySelectorAll('a[data-filter]').forEach(link => {
+    link.addEventListener('click', () => {
+      const filter = link.getAttribute('data-filter');
 
     // Aplicar el filtro inmediatamente
-          setTimeout(() => applyFilter(filter), 300);
-        });
-      });
-    </script>
+      setTimeout(() => applyFilter(filter), 300);
+    });
+  });
+</script>
 
-    <script>
+<script>
   // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
-      const hamburger = document.getElementById('hamburger');
-      const sideMenu = document.getElementById('side-menu');
-      const overlay = document.getElementById('overlay');
-      const closeBtn = document.getElementById('closeMenu');
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('side-menu');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('closeMenu');
 
-      function openMenu() {
-        sideMenu.classList.add('active');
-        overlay.classList.add('active');
-        document.body.classList.add('no-scroll');
-        hamburger.setAttribute('aria-expanded', 'true');
-        sideMenu.setAttribute('aria-hidden', 'false');
-        overlay.setAttribute('aria-hidden', 'false');
-      }
-      function closeMenu() {
-        sideMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-        hamburger.setAttribute('aria-expanded', 'false');
-        sideMenu.setAttribute('aria-hidden', 'true');
-        overlay.setAttribute('aria-hidden', 'true');
-      }
+  function openMenu() {
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+    hamburger.setAttribute('aria-expanded', 'true');
+    sideMenu.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    hamburger.setAttribute('aria-expanded', 'false');
+    sideMenu.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
 
-      hamburger.addEventListener('click', () => {
-        if (sideMenu.classList.contains('active')) {
+  hamburger.addEventListener('click', () => {
+    if (sideMenu.classList.contains('active')) {
     closeMenu(); // 🔹 Si ya está abierto, lo cierra
   } else {
     openMenu();  // 🔹 Si está cerrado, lo abre
   }
 });
 
-      closeBtn.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
 
   // Cerrar con ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
-      });
-    </script>
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sideMenu.classList.contains('active')) closeMenu();
+  });
+</script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
 
-        const sections = document.querySelectorAll("section[id]");
-        const desktopLinks = document.querySelectorAll(".top-menu ul li a");
-        const mobileLinks = document.querySelectorAll(".side-menu ul li a");
+    const sections = document.querySelectorAll("section[id]");
+    const desktopLinks = document.querySelectorAll(".top-menu ul li a");
+    const mobileLinks = document.querySelectorAll(".side-menu ul li a");
 
   // --- ELIMINA ACTIVE EN AMBOS MENÚS ---
-        function clearActive() {
-          desktopLinks.forEach(l => l.classList.remove("active-link"));
-          mobileLinks.forEach(l => l.classList.remove("active-link"));
-        }
+    function clearActive() {
+      desktopLinks.forEach(l => l.classList.remove("active-link"));
+      mobileLinks.forEach(l => l.classList.remove("active-link"));
+    }
 
   // --- ACTIVAR POR SCROLL ---
-        function activateByScroll() {
-          let scrollPos = window.scrollY + 200;
+    function activateByScroll() {
+      let scrollPos = window.scrollY + 200;
 
-          sections.forEach(section => {
-            const id = section.getAttribute("id");
-            const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
+      sections.forEach(section => {
+        const id = section.getAttribute("id");
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
 
-            if (scrollPos >= top && scrollPos < bottom) {
+        if (scrollPos >= top && scrollPos < bottom) {
 
-              clearActive();
+          clearActive();
 
         // Escritorio
-              desktopLinks.forEach(link => {
-                if (link.getAttribute("href") === `#${id}`) {
-                  link.classList.add("active-link");
-                }
-              });
+          desktopLinks.forEach(link => {
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active-link");
+            }
+          });
 
         // Móvil
-              mobileLinks.forEach(link => {
-                if (link.getAttribute("href") === `#${id}`) {
-                  link.classList.add("active-link");
-                }
-              });
+          mobileLinks.forEach(link => {
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active-link");
             }
           });
         }
+      });
+    }
 
   // --- ACTIVAR POR CLIC EN CUALQUIER MENÚ ---
-        function setupClicks(links) {
-          links.forEach(link => {
-            link.addEventListener("click", () => {
-              clearActive();
-              link.classList.add("active-link");
-            });
-          });
-        }
+    function setupClicks(links) {
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          clearActive();
+          link.classList.add("active-link");
+        });
+      });
+    }
 
   setupClicks(desktopLinks);  // clic en escritorio
   setupClicks(mobileLinks);   // clic en móvil
@@ -243,7 +243,7 @@
   <div class="about-container">
     <div class="about-header">
       <button class="about-button">
-        <span class="star">✦</span> ABOUT ME
+        <span class="star">✦</span> Sobre mí <span class="star">✦</span>
       </button>
       <h1>Hola! Soy Jordy Chila</h1>
       <p>
@@ -649,7 +649,6 @@
   });
 </script>
 
-
 <!-- ===========================================
      SECTION EDUCATION & EXPERIENCE
 =========================================== -->
@@ -657,7 +656,7 @@
   <div class="edu-exp-container">
 
     <button class="edu-exp-button">
-      <span class="star">✦</span> Education & Experience
+      <span class="star">✦</span> FORMACIÓN Y EXPERIENCIA
     </button>
 
     <h1>Educación y experiencia</h1>
