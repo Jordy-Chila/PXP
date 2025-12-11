@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="" et="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="img/icono.ico">
 
@@ -46,22 +46,37 @@
 <!-- Overlay para oscurecer fondo (no cubre navbar) -->
 <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
 
-<!-- Barra lateral derecha (menú móvil) -->
+<!-- SIDE MENU (MODERNO + BOTÓN CERRAR DERECHA) -->
 <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
-  <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✖</button>
-  <ul>
-   
-   <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank" class="curriculum-btn sparkle">Currículum</a></li>
-   <li><a href="#home">Inicio</a></li>
-   <li><a href="#about-section">Sobre mí</a></li>
-   <li><a href="#education-experience">Trayectoria</a></li>
-   <li><a href="#Certificados">Certificados</a></li>
-   <li><a href="#Innovaciones">Proyectos Destacados</a></li>
-   <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
-   <li><a href="#footer">Contactos</a></li>
- </ul>
-</nav>
 
+    <!-- Botón de cerrar (moderno y funcional con tu JS actual) -->
+    <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Contenido principal del menú -->
+    <div class="side-menu-content">
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about-section">Sobre mí</a></li>
+            <li><a href="#education-experience">Trayectoria</a></li>
+            <li><a href="#Certificados">Certificados</a></li>
+            <li><a href="#Innovaciones">Proyectos Destacados</a></li>
+            <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
+            <li><a href="#footer">Contactos</a></li>
+        </ul>
+    </div>
+
+    <!-- Botón Currículum especial en el pie -->
+    <div class="side-menu-footer">
+        <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing"
+           target="_blank"
+           class="curriculum-mobile-btn">
+           Currículum
+        </a>
+    </div>
+
+</nav>
 
 <script>
   // Ampliar tu script para que cualquier elemento con data-filter active el filtro correspondiente
@@ -626,8 +641,6 @@
     });
   });
 </script>
-
-
 <script>
   // --- Animación para el contenido de "Service" ---
   document.addEventListener("DOMContentLoaded", () => {
