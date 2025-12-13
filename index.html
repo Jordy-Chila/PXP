@@ -21,24 +21,35 @@
   <header class="navbar" role="banner">
     <div class="logo">
       <!-- Reemplaza src si quieres un logo -->
-      <img src="img/logo.png" alt="Mi Logo" />
+      <a href="#home" class="logo" aria-label="Ir al inicio">
+        <img src="img/logo.png" alt="Mi Logo" />
+      </a>
+
     </div>
 
     <!-- Menú superior (visible en escritorio) -->
     <nav class="top-menu" aria-label="Menú principal">
-      <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank" class="curriculum-btn sparkle">Currículum</a></li>
-        
-        <li><a href="#about-section">Sobre mí</a></li>
-        <li><a href="#education-experience">Trayectoria</a></li>
-        <li><a href="#Certificados">Certificados</a></li>
-        <li><a href="#Innovaciones">Proyectos Destacados</a></li>
-        <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
-        <li><a href="#footer">Contactos</a></li>
+      <ul class="menu-wrapper">
+
+        <!-- Grupo izquierdo -->
+        <div class="menu-left">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about-section">Sobre mí</a></li>
+          <li><a href="#education-experience">Trayectoria</a></li>
+          <li><a href="#Certificados">Certificados</a></li>
+          <li><a href="#Innovaciones">Proyectos Destacados</a></li>
+          <li><a href="#portfolio">Portafolio</a></li>
+          <li><a href="#footer">Contactos</a></li>
+        </div>
+
+        <!-- Grupo derecho -->
+        <div class="menu-right">
+          <li class="menu-curriculum">
+            <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" target="_blank" class="curriculum-btn sparkle">Currículum</a>  
+          </li>
+        </div>
       </ul>
     </nav>
-
     <!-- Botón hamburguesa (móvil) -->
     <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </header>
@@ -49,32 +60,32 @@
 <!-- SIDE MENU (MODERNO + BOTÓN CERRAR DERECHA) -->
 <nav class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menú movil">
 
-    <!-- Botón de cerrar (moderno y funcional con tu JS actual) -->
-    <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">
-        <i class="fas fa-times"></i>
-    </button>
+  <!-- Botón de cerrar (moderno y funcional con tu JS actual) -->
+  <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">
+    <i class="fas fa-times"></i>
+  </button>
 
-    <!-- Contenido principal del menú -->
-    <div class="side-menu-content">
-        <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about-section">Sobre mí</a></li>
-            <li><a href="#education-experience">Trayectoria</a></li>
-            <li><a href="#Certificados">Certificados</a></li>
-            <li><a href="#Innovaciones">Proyectos Destacados</a></li>
-            <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
-            <li><a href="#footer">Contactos</a></li>
-        </ul>
-    </div>
+  <!-- Contenido principal del menú -->
+  <div class="side-menu-content">
+    <ul>
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#about-section">Sobre mí</a></li>
+      <li><a href="#education-experience">Trayectoria</a></li>
+      <li><a href="#Certificados">Certificados</a></li>
+      <li><a href="#Innovaciones">Proyectos Destacados</a></li>
+      <li><a href="#portfolio" data-filter="all">Portafolio</a></li>
+      <li><a href="#footer">Contactos</a></li>
+    </ul>
+  </div>
 
-    <!-- Botón Currículum especial en el pie -->
-    <div class="side-menu-footer">
-        <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing"
-           target="_blank"
-           class="curriculum-mobile-btn">
-           Currículum
-        </a>
-    </div>
+  <!-- Botón Currículum especial en el pie -->
+  <div class="side-menu-footer">
+    <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing"
+    target="_blank"
+    class="curriculum-mobile-btn">
+    Currículum
+  </a>
+</div>
 
 </nav>
 
@@ -390,15 +401,12 @@
       <span class="star">✦</span> Certificados
     </button>
     <h1>Capacidades y Reconocimientos</h1>
-    <p>
-      Certificaciones que validan mi experiencia, fortalecen mis capacidades y demuestran la calidad de mi preparación.
-    </p>
+    <p>Certificaciones que validan mi experiencia, fortalecen mis capacidades y demuestran la calidad de mi preparación.</p>
 
     <div class="skills-awards-content">
 
       <!-- COLUMNA IZQUIERDA: SKILLS -->
       <div class="skills-circles-grid">
-
         <div class="skill-box">
           <a href="https://drive.google.com/file/d/1s5njhiEaqFDbe89n8Le05dkbfqu_100R/view?usp=sharing" 
           target="_blank" class="circle-skill">
@@ -495,6 +503,7 @@
 <p class="skill-label">MOOC Ofimática Básica</p>
 </div>
 </div>
+
 <!-- Columna Derecha: Awards -->
 <div class="awards-column">
 
@@ -515,12 +524,14 @@
     <a href="https://drive.google.com/file/d/11dwi9VlRrdIKz6MpEPrjI8AUTPgYnV_D/view" target="_blank" class="badge-img">
       <img src="img/BC-Certificado.png" alt="Certificado">
     </a>
+
   </div>
 </div>
 
-</div>
-</div>
+</div> <!-- skills-awards-content -->
+</div> <!-- certificado-awards-container -->
 </section>
+
 <script>
   // --- Animación para el contenido de "Skills & Awards" ---
   document.addEventListener("DOMContentLoaded", () => {
@@ -707,10 +718,14 @@
 
           <p>La Unidad Educativa Fiscomisional Sagrado Corazón es una institución que ofrece formación integral y técnica, preparando a los estudiantes con competencias en aplicaciones informáticas, soporte tecnológico y herramientas digitales.</p>
           <span class="edu-location">Unidad Educativa Fiscomisional Sagrado Corazón</span>
+
           <!-- ICONOS CIRCULARES - CURSOS  -->
           <div class="edu-icons">
-            <a href="https://drive.google.com/file/d/1nKw8Bj3oJCbxLKr24Dyc651JGd2iT3P0/view?usp=drive_link" target="_blank">
-              <img src="img/T-Tecnico.png" alt="Título Técnico">
+
+            <!-- FIX: Primer <a> cerrado correctamente -->
+              <a href="https://drive.google.com/file/d/1nKw8Bj3oJCbxLKr24Dyc651JGd2iT3P0/view?usp=drive_link" target="_blank">
+                <img src="img/T-Tecnico.png" alt="Título Técnico">
+              </a>
 
               <a href="https://drive.google.com/file/d/11dwi9VlRrdIKz6MpEPrjI8AUTPgYnV_D/view?usp=sharing" target="_blank">
                 <img src="img/T-certificado.png" alt="Certificado de Registro del Título del Bachiller">
@@ -724,108 +739,97 @@
 
             <p>Docente de Computación, enseñando competencias digitales, programación básica y uso de herramientas tecnológicas para fortalecer la formación académica y práctica de los estudiantes.</p>
             <span class="edu-location">Escuela de Capacitación para Conductores Profesionales de Esmeraldas</span>
-            
+
             <!-- ICONOS CIRCULARES - CURSOS  -->
             <div class="edu-icons">
               <a href="https://drive.google.com/file/d/1X_qZYUsjQZ9ky-o2G9iPEmQN0SpU6WZs/view?usp=drive_link" target="_blank">
-                <img src="img/T-Facilitador de aprendizaje digital.png" alt="Facilitador de aprendizaje digital"> </a>
+                <img src="img/T-Facilitador de aprendizaje digital.png" alt="Facilitador de aprendizaje digital">
+              </a>
 
-                <a href="https://drive.google.com/file/d/1XB6ld2MSzSpXQn3MWpTaxCqe-h_UpeTe/view?usp=drive_link" target="_blank">
-                  <img src="img/T-Evaluador de aprendizaje digital.png" alt="Evaluador de aprendizaje digital"></a>
+              <a href="https://drive.google.com/file/d/1XB6ld2MSzSpXQn3MWpTaxCqe-h_UpeTe/view?usp=drive_link" target="_blank">
+                <img src="img/T-Evaluador de aprendizaje digital.png" alt="Evaluador de aprendizaje digital">
+              </a>
 
-                  <a href="https://drive.google.com/file/d/1fIOTo-J52WwmzlHcnZhW53JwrgC47oGa/view?usp=drive_link" target="_blank">
-                    <img src="img/T-Desarrollador de contenidos de aprendizaje.png" alt="Desarrollador de contenidos de aprendizaje"> </a>
-                  </div>
-                </div>
+              <a href="https://drive.google.com/file/d/1fIOTo-J52WwmzlHcnZhW53JwrgC47oGa/view?usp=drive_link" target="_blank">
+                <img src="img/T-Desarrollador de contenidos de aprendizaje.png" alt="Desarrollador de contenidos de aprendizaje">
+              </a>
+            </div>
+          </div>
 
-                <div class="edu-exp-empty"></div> <!-- POS 6 -->
+          <div class="edu-exp-empty"></div> <!-- POS 6 -->
 
-                <!-- Fila 4 → POSICIÓN 7 — CÍRCULOS ALINEADOS A LA IZQUIERDA -->
-                <div class="edu-exp-empty"></div> <!-- POS 7-1 -->
+          <!-- Fila 4 -->
+          <div class="edu-exp-empty"></div> <!-- POS 7-1 -->
 
-                <div class="edu-exp-box"> <!-- POSICIÓN 7 -->
-                  <h2 id="fila1">2025</h2><h3> Diseño en Desarrollo web y E-learning</h3> 
+          <div class="edu-exp-box"> <!-- POSICIÓN 7 -->
+            <h2 id="fila1">2025</h2><h3> Diseño en Desarrollo web y E-learning</h3> 
 
-                  <p>En diseño y desarrollo web educativo, implementación y administración de Moodle, así como en la integración de herramientas digitales y metodologías e-learning para fortalecer la calidad de los entornos virtuales de aprendizaje.</p>
-                  <span class="edu-location"></span>
+            <p>En diseño y desarrollo web educativo, implementación y administración de Moodle, así como en la integración de herramientas digitales y metodologías e-learning para fortalecer la calidad de los entornos virtuales de aprendizaje.</p>
+            <span class="edu-location"></span>
 
-                  <!-- ICONOS CIRCULARES - CURSOS  -->
-                  <div class="edu-icons">
-                    <a href="https://drive.google.com/file/d/1WF14H89yXu55Y6moQhwsxLMStLZrA82N/view?usp=drive_link" target="_blank">
-                      <img src="img/T-Administrador de plataformas digitales de aprendizaje.png" alt="Administrador de plataformas digitales de aprendizaje"></a>
+            <!-- ICONOS CIRCULARES - CURSOS  -->
+            <div class="edu-icons">
+              <a href="https://drive.google.com/file/d/1WF14H89yXu55Y6moQhwsxLMStLZrA82N/view?usp=drive_link" target="_blank">
+                <img src="img/T-Administrador de plataformas digitales de aprendizaje.png" alt="Administrador de plataformas digitales de aprendizaje">
+              </a>
 
-                      <a href="https://drive.google.com/file/d/1VOfQMapVbqFcEzTgCZFXaG4LqtReW1mr/view?usp=drive_link" target="_blank">
-                        <img src="img/T-Metodologia y Procesos para el desarrollo de aplicaciones.png" alt="Metodologia y Procesos para el desarrollo de aplicaciones"></a>
+              <a href="https://drive.google.com/file/d/1VOfQMapVbqFcEzTgCZFXaG4LqtReW1mr/view?usp=drive_link" target="_blank">
+                <img src="img/T-Metodologia y Procesos para el desarrollo de aplicaciones.png" alt="Metodologia y Procesos para el desarrollo de aplicaciones">
+              </a>
 
-                        <a href="https://drive.google.com/file/d/1s5njhiEaqFDbe89n8Le05dkbfqu_100R/view?usp=drive_link" target="_blank">
-                          <img src="img/T-Desarrollo de estrategias digitales de aprendizaje.png" alt="Desarrollo de estrategias digitales de aprendizaje"></a>
-                        </div>
-                      </div>
+              <a href="https://drive.google.com/file/d/1s5njhiEaqFDbe89n8Le05dkbfqu_100R/view?usp=drive_link" target="_blank">
+                <img src="img/T-Desarrollo de estrategias digitales de aprendizaje.png" alt="Desarrollo de estrategias digitales de aprendizaje">
+              </a>
+            </div>
+          </div>
 
-                      <!-- Fila 5 → POSICIÓN 9 — CÍRCULOS A LA DERECHA -->
-                      <div class="edu-exp-box"> <!-- POSICIÓN 9 -->
-                        <h2 id="fila1">2024 </h2><h3> Analista de Datos y Automatización en Microsoft Excel</h3>
+          <!-- Fila 5 -->
+          <div class="edu-exp-box"> <!-- POSICIÓN 9 -->
+            <h2 id="fila1">2024 </h2><h3> Analista de Datos y Automatización en Microsoft Excel</h3>
 
-                        <p>Experiencia como Analista de Datos, aplicando Microsoft Excel para la automatización de procesos, la optimización del manejo de información y la generación de reportes exactos y eficientes.</p>
-                        <span class="edu-location">Universidad Técnica Luis Vargas Torres de Esmeraldas</span>
+            <p>Experiencia como Analista de Datos, aplicando Microsoft Excel para la automatización de procesos, la optimización del manejo de información y la generación de reportes exactos y eficientes.</p>
+            <span class="edu-location">Universidad Técnica Luis Vargas Torres de Esmeraldas</span>
 
-                        <!-- ICONOS CIRCULARES - CURSOS  -->
-                        <div class="edu-icons">
-                          <a href="https://drive.google.com/file/d/1nO7xjZUWshgUoxUnjX9-rxo8fCeym9cI/view?usp=drive_link" target="_blank">
-                            <img src="img/T-Introducción a la estadística y probabilidad.png" alt="Introducción a la estadística y probabilidad"></a>
+            <!-- ICONOS CIRCULARES - CURSOS  -->
+            <div class="edu-icons">
+              <a href="https://drive.google.com/file/d/1nO7xjZUWshgUoxUnjX9-rxo8fCeym9cI/view?usp=drive_link" target="_blank">
+                <img src="img/T-Introducción a la estadística y probabilidad.png" alt="Introducción a la estadística y probabilidad">
+              </a>
 
-                            <a href="https://drive.google.com/file/d/1nUNHePO4OYMqqh8lME_cfYpZGwCe6Nba/view?usp=drive_link" target="_blank">
-                              <img src="img/T-Analista de necesidades de formación.png" alt="Analista de necesidades de formación"></a>
-                            </div>
-                          </div>
+              <a href="https://drive.google.com/file/d/1nUNHePO4OYMqqh8lME_cfYpZGwCe6Nba/view?usp=drive_link" target="_blank">
+                <img src="img/T-Analista de necesidades de formación.png" alt="Analista de necesidades de formación">
+              </a>
+            </div>
+          </div>
 
-                          <div class="edu-exp-empty"></div> <!-- POS 10 -->
+          <div class="edu-exp-empty"></div> <!-- POS 10 -->
 
-<!-- 
-En caso de que haga maestria este espacio servira
-Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
-<!-- POS 11-1 -->
-<!--
-<div class="edu-exp-empty"></div>
+        </div> <!-- edu-exp-grid -->
+      </div> <!-- edu-exp-subsection -->
+    </div> <!-- edu-exp-container -->
+  </section>
 
-<div class="edu-exp-box">
-  <h3> Analista de Datos y Automatización en Microsoft Excel</h3> <h2 id="fila1">2024</h2> 
-
-  <p></p>
-  <span class="edu-location"></span>
-
-  <div class="edu-icons">
-    <img src="img/figma.png">
-    <img src="img/sketch.png">
-    <img src="img/ps.png">
-    <img src="img/ai.png">
-  </div>
-</div>
--->
-</div>
-</div>
-</div>
-</section>
-<script>
+  <script>
   // --- Animación para el contenido de "Education & Experience" ---
-  document.addEventListener("DOMContentLoaded", () => {
-    const eduContainer = document.querySelector(".edu-exp-container");
+    document.addEventListener("DOMContentLoaded", () => {
+      const eduContainer = document.querySelector(".edu-exp-container");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
-        }
-      });
-    }, { threshold: 0.2 });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      }, { threshold: 0.2 });
 
-    if (eduContainer) {
-      observer.observe(eduContainer);
-    }
-  });
-</script>
+      if (eduContainer) {
+        observer.observe(eduContainer);
+      }
+    });
+  </script>
+
 <!-- ================================
       SECCION DE PORTAFOLIO
 ================================ -->
@@ -855,45 +859,47 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
       <div class="portfolio-img">
         <img src="img/pfweb1.png" alt="Web Project 1">
         <div class="portfolio-hover">
-         <h3>S.O.V.E</h3>
-         <p>Sindicato Obreros del Volante de Esmeraldas</p>
-       </div>
-     </div>
-   </a>
+          <h3>S.O.V.E</h3>
+          <p>Sindicato Obreros del Volante de Esmeraldas</p>
+        </div>
+      </div>
+    </a>
 
-   <!-- ITEM 2 -->
-   <a href="https://utlvte-carrerati.github.io/bot.IA/" target="_blank" class="portfolio-item" data-category="web">
-    <div class="portfolio-img">
-      <img src="img/pfweb2.png" alt="Web Project 1">
-      <div class="portfolio-hover">
-       <h3>F.A.C.I</h3>
-       <p>Facultad de Ingenierías</p>
-     </div>
-   </div>
- </a>
+    <!-- ITEM 2 -->
+    <a href="https://utlvte-carrerati.github.io/bot.IA/" target="_blank" class="portfolio-item" data-category="web">
+      <div class="portfolio-img">
+        <img src="img/pfweb2.png" alt="Web Project 1">
+        <div class="portfolio-hover">
+          <h3>F.A.C.I</h3>
+          <p>Facultad de Ingenierías</p>
+        </div>
+      </div>
+    </a>
 
- <!-- ITEM 3 -->
- <a href="https://drive.google.com/file/d/1PIoKya5HCV_CuRKLbXSFnBRLW8jukydc/view?usp=sharing" target="_blank" class="portfolio-item" data-category="uiux">
-  <div class="portfolio-img">
-    <img src="img/pfui.png" alt="UI UX Design">
-    <div class="portfolio-hover">
-      <h3>C.A.I</h3>
-      <p>Chat Bot</p>
+    <!-- ITEM 3 -->
+    <a href="https://drive.google.com/file/d/1PIoKya5HCV_CuRKLbXSFnBRLW8jukydc/view?usp=sharing" target="_blank" class="portfolio-item" data-category="uiux">
+      <div class="portfolio-img">
+        <img src="img/pfui.png" alt="UI UX Design">
+        <div class="portfolio-hover">
+          <h3>C.A.I</h3>
+          <p>Chat Bot</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- ITEM 4 -->
+    <div class="portfolio-item" data-category="mobile">
+      <div class="portfolio-img">
+        <img src="img/pfmo.png" alt="Data Project">
+        <div class="portfolio-hover">
+          <h3>AppAR</h3>
+          <p>Plataforma de Realidad Aumentada diseñada para integrar contenido digital en el entorno real de forma intuitiva y dinámica</p>
+        </div>
+      </div>
     </div>
-  </div>
-</a>
 
-<!-- ITEM 4 -->
-<div class="portfolio-item" data-category="mobile">
-  <div class="portfolio-img">
-    <img src="img/pfmo.png" alt="Data Project">
-    <div class="portfolio-hover">
-      <h3>AppAR</h3>
-      <p>Plataforma de Realidad Aumentada diseñada para integrar contenido digital en el entorno real de forma intuitiva y dinámica</p>
-    </div>
-  </div>
-</div>
-</div>
+  </div> <!-- cierre correcto de portfolio-grid -->
+
 </section>
 
 <!-- FILTRO JS -->
@@ -981,7 +987,5 @@ Fila 6 → POSICIÓN 11 — CÍRCULOS IZQUIERDA -->
     </div>
   </div>
 </footer>
-
-
 </body>
 </html>

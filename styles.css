@@ -49,6 +49,12 @@
     width: auto;
     display: block;
   }
+  .logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
 
 /* ----------------------------------------------------
    NAVBAR SUPERIOR — STICKY + DISEÑO MODERNO
@@ -66,6 +72,8 @@ header {
 }
 
 /* Contenedor del menú superior */
+
+/* Contenedor del menú */
 .top-menu {
   width: 100%;
   display: flex;
@@ -73,13 +81,44 @@ header {
   padding: 15px 0;
 }
 
-.top-menu ul {
+/* UL principal del menú */
+.top-menu ul.menu-wrapper {
   display: flex;
   align-items: center;
-  gap: 45px;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* Grupo izquierdo (links principales) */
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin-left: 25px;
+}
+
+/* Grupo derecho (Currículum) */
+.menu-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* CLAVE: lo fija al extremo derecho */
+}
+
+/* Ítem Currículum */
+.menu-curriculum {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón / enlace Currículum (sin alterar tu estilo visual) */
+.curriculum-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  white-space: nowrap;
 }
 
 /* Enlaces normales */
@@ -138,25 +177,25 @@ header {
 /* ============================================================
    BOTÓN CURRÍCULUM — ESTILO DORADO + SPARKLES (tipo GIF)
    ============================================================ */
-.curriculum-btn {
-  position: relative;
-  padding: 10px 26px;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
+   .curriculum-btn {
+    position: relative;
+    padding: 10px 26px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
 
-  color: #ffdd8a; /* dorado suave */
-  text-decoration: none;
+    color: #ffdd8a; /* dorado suave */
+    text-decoration: none;
 
-  background: linear-gradient(90deg, #b88a00, #ffd56b, #ffb300);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #b88a00, #ffd56b, #ffb300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  border: 1px solid rgba(255, 215, 130, 0.45);
-  border-radius: 28px;
+    border: 1px solid rgba(255, 215, 130, 0.45);
+    border-radius: 28px;
 
-  transition: 0.3s ease;
-}
+    transition: 0.3s ease;
+  }
 
 /* ------- SPARKLES (puntos brillantes tipo GIF) ------- */
 .sparkle::before,
@@ -246,23 +285,23 @@ header {
 /* ===========================
    SIDE MENU (móvil)
    =========================== */
-.side-menu {
-  position: fixed;
-  top: var(--navbar-height);
-  right: -280px;
-  width: 280px;
-  height: calc(100% - var(--navbar-height));
-  background-color: #1e1e2f;
-  padding: 22px 18px;
-  transition: right .36s cubic-bezier(.2,.9,.2,1);
-  z-index: 1500;
-  box-shadow: -12px 0 30px rgba(0,0,0,0.15);
-  border-left: 1px solid rgba(255,255,255,0.02);
-}
+   .side-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    right: -280px;
+    width: 280px;
+    height: calc(100% - var(--navbar-height));
+    background-color: #1e1e2f;
+    padding: 22px 18px;
+    transition: right .36s cubic-bezier(.2,.9,.2,1);
+    z-index: 1500;
+    box-shadow: -12px 0 30px rgba(0,0,0,0.15);
+    border-left: 1px solid rgba(255,255,255,0.02);
+  }
 
-.side-menu.active {
-  right: 0;
-}
+  .side-menu.active {
+    right: 0;
+  }
 
 
 /* ===========================================
@@ -388,33 +427,33 @@ header {
 /* ===========================
    TEXTO ACTIVO CON DEGRADADO
    =========================== */
-.side-menu ul li a.active-link {
-  font-weight: 700;
-  background: linear-gradient(90deg, #ff7a00, #ff3e6b, #ff008c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+   .side-menu ul li a.active-link {
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff7a00, #ff3e6b, #ff008c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
 /* ===========================
    Overlay del menú móvil
    =========================== */
-.overlay {
-  position: fixed;
-  top: var(--navbar-height);
-  left: 0;
-  width: 100%;
-  height: calc(100% - var(--navbar-height));
-  background-color: rgba(0,0,0,0.45);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .36s ease;
-  z-index: 1400;
-}
+   .overlay {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    background-color: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .36s ease;
+    z-index: 1400;
+  }
 
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
 
 
 /* ===========================
