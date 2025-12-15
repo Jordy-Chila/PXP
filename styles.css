@@ -613,6 +613,43 @@ header {
   .about-section {
     scroll-margin-top: var(--navbar-height);
   }
+  /* =====================================================
+   HOME – MISMO LOOK DESKTOP EN MOBILE
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* Mantén estructura */
+  .home {
+    flex-direction: column;
+  }
+
+  .home-left {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  /* NO tocamos el modelo visual */
+  .home-right {
+    padding: 190px;
+    min-height: calc(90vh - var(--navbar-height));
+    align-items: flex-end;
+  }
+
+  /* TEXTO: MISMA POSICIÓN, SOLO MÁS PEQUEÑO */
+  .bg-text {
+    top: 15%;                 /* EXACTO como desktop */
+    font-size: 3rem;         /* solo escala */
+    white-space: nowrap;
+  }
+
+  /* IMAGEN: MISMA LÓGICA QUE DESKTOP */
+  .hero-img {
+    bottom: 0;
+    max-height: 85%;
+    max-width: 400px;        /* escala, no reposiciona */
+  }
+}
+
 
 /* ===========================
    SECCIÓN About Me / Sobre mí
