@@ -135,6 +135,52 @@
 </script>
 
 <script>
+  //Detectar Scroll
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const sections = document.querySelectorAll("section[id]");
+    const desktopLinks = document.querySelectorAll(".top-menu a[href^='#']");
+    const mobileLinks  = document.querySelectorAll(".side-menu a[href^='#']");
+
+    function clearActive() {
+      desktopLinks.forEach(link => link.classList.remove("active-link"));
+      mobileLinks.forEach(link => link.classList.remove("active-link"));
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            clearActive();
+
+            desktopLinks.forEach(link => {
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active-link");
+              }
+            });
+
+            mobileLinks.forEach(link => {
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active-link");
+              }
+            });
+          }
+        });
+      },
+      {
+        root: null,
+      rootMargin: "-45% 0px -45% 0px", // activa cuando la sección está centrada
+      threshold: 0
+    }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  });
+</script>
+
+
+<script>
   // JS para abrir/cerrar menú lateral y manejar overlay + bloqueo scroll
   const hamburger = document.getElementById('hamburger');
   const sideMenu = document.getElementById('side-menu');
@@ -245,7 +291,7 @@
     <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" 
     class="btn-cv" target="_blank" rel="noopener noreferrer">
     <i class="fas fa-file-alt"></i> Download CV </a>
-</div>
+  </div>
 <!-- Lado Derecho -->
 <div class="home-right">
   <!-- Texto grande seleccionable detrás de la imagen -->
