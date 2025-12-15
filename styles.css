@@ -1819,44 +1819,26 @@ img {
   -webkit-touch-callout: none;
 }
 
-/* === BLOQUEAR SELECCIÓN DE TEXTO === */
+/* ===============================
+   PROTECCIÓN VISUAL BÁSICA
+   © 2025 Jordy Chila
+================================ */
 
-/* Web & Mobile App Developer */
-.home-left p,
-.home-left h1,
-.home-left a,
-
-/* Sobre mí */
-.about-header p,
-.info-label,
-.skill-name,
-
-/* Habilidades técnicas */
-.skills-container p,
-
-/* Capacidades y Reconocimientos */
-.skill-label,
-.certificado-awards-container,
-
-/* Proyectos Destacados */
-.contex-Service p,
-.service-card,
-
-/* Educación y experiencia */
-.edu-exp-container p,
-.edu-exp-box h2,
-.edu-exp-box h3,
-.edu-location,
-
-/* Mis trabajos */
-.portfolio-header p,
-.portfolio-filters,
-
-/* Footer */
-.footer-bottom,
-.footer-sub {
-  user-select: none;
+/* Evitar selección de texto */
+body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
+}
+
+/* Evitar arrastre de imágenes */
+img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Permitir selección SOLO donde quieras */
+.copy-allowed {
+  user-select: text;
 }
