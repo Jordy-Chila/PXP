@@ -1400,6 +1400,64 @@ header {
 .edu-icons img:hover {
   transform: scale(1.08);
 }
+/* =====================================================
+   EDUCATION & EXPERIENCE
+   Ajustes específicos - Iconos circulares (Cursos)
+===================================================== */
+
+/* ---------------------------------
+   1. Alineación SOLO posiciones 1, 5 y 9 (desktop)
+---------------------------------- */
+.edu-exp-subsection .edu-exp-box:nth-of-type(1) .edu-icons,
+.edu-exp-subsection .edu-exp-box:nth-of-type(5) .edu-icons,
+.edu-exp-subsection .edu-exp-box:nth-of-type(9) .edu-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ---------------------------------
+   2. Tamaño del icono circular
+   (ligeramente más pequeño)
+---------------------------------- */
+.edu-exp-subsection .edu-icons a {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ---------------------------------
+   3. Imagen interna más grande
+   (mejor ajuste, menos espacio vacío)
+---------------------------------- */
+.edu-exp-subsection .edu-icons img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+/* Hover sutil y controlado */
+.edu-exp-subsection .edu-icons a:hover img {
+  transform: scale(1.08);
+}
+
+/* ---------------------------------
+   4. RESPONSIVE
+   En móviles los iconos van a la izquierda
+---------------------------------- */
+@media (max-width: 768px) {
+  .edu-exp-subsection .edu-exp-box:nth-of-type(1) .edu-icons,
+  .edu-exp-subsection .edu-exp-box:nth-of-type(5) .edu-icons,
+  .edu-exp-subsection .edu-exp-box:nth-of-type(9) .edu-icons {
+    justify-content: flex-start;
+  }
+}
 
 /* ============================================
    LÍNEA ENTRE COLUMNA 1 Y COLUMNA 2
