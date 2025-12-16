@@ -474,17 +474,16 @@ header {
     visibility: visible;
   }
 
+/* ===================================== */
+/*    SECCION HOME | seccion - inicio    */
+/* ===================================== */
+.home {
+  display: flex;
+  min-height: calc(100vh - var(--navbar-height)); /* ocupa toda la pantalla debajo del navbar */
+  align-items: center;
+}
 
-/* ===========================
-   SECCIÓN HOME
-   =========================== */
-   .home {
-    display: flex;
-    min-height: calc(100vh - var(--navbar-height)); /* ocupa toda la pantalla debajo del navbar */
-    align-items: center;
-  }
-
-/* ----- LADO IZQUIERDO ----- */
+/* SECCION HOME | LADO IZQUIERDO  */
 .home-left {
   flex: 1;
   background: #fff;
@@ -509,32 +508,29 @@ header {
   max-width: 680px;
 }
 
-/* Botón CV */
 .btn-cv {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  border: 2px solid #555;   /* borde gris oscuro */
-  background: transparent;  /* sin fondo por defecto */
-  color: #333;              /* texto gris oscuro */
+  border: 2px solid #555;   
+  background: transparent;  
+  color: #333;              
   font-weight: 600;
   font-size: 0.95rem;
-  border-radius: 6px;       /* bordes ligeramente redondeados */
+  border-radius: 6px;       
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-/* Hover → invierte colores */
 .btn-cv:hover {
-  background: #333;   /* gris oscuro */
-  color: #fff;        /* texto blanco */
+  background: #333;   
+  color: #fff;        
 }
 
-
-/* ----- LADO DERECHO ----- */
+/* SECCION HOME | LADO DERECHO */
 .home-right {
   flex: 1;
   position: relative;
@@ -546,7 +542,7 @@ header {
 
   min-height: calc(100vh - var(--navbar-height));
 
-  /* Degradado cónico artístico */
+  /* Fondo Degradado  */
   background: radial-gradient(
     circle at center,
     #a55dda 10%,
@@ -555,7 +551,7 @@ header {
   );
 }
 
-/* Texto grande translúcido detrás de la imagen */
+/* Texto grande seleccionable detrás de la imagen */
 .bg-text {
   position: absolute;
   top: 5%;
@@ -569,13 +565,15 @@ header {
   z-index: 1;
 
   /* Texto semitransparente con degradado */
-  background: linear-gradient(9deg, #ffffffaa, #ffffff33);
+  background: linear-gradient(9deg,#ffffffaa, #ffffff33);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   /* Sin animación */
-  opacity: 1;
+  opacity: 100;
 }
-/* Imagen PNG centrada-abajo */
+
+/* Imagen PNG por delante */
 .hero-img {
   position: absolute;
   bottom: 0;   /* pega la imagen al pie de la sección */
@@ -585,40 +583,25 @@ header {
   width: auto;
   z-index: 2;
 }
-/* ===========================
-   RESPONSIVE
-   =========================== */
-   @media (max-width: 1000px) {
-    .home-left h1 { font-size: 2.4rem; }
-    .bg-text { font-size: 3rem; }
-  }
 
-  @media (max-width: 768px) {
-    .top-menu { display: none; }
-    .hamburger { display: block; }
-    .home { flex-direction: column; }
-    .home-left { padding: 40px 20px; }
-    .home-right { padding: 200px; min-height: 360px; align-items: center; }
-    .bg-text { font-size: 2.2rem; top: 30%; }
-    .hero-img { max-width: 420px; }
-  }
+/* ---------------------------
+          RESPONSIVE 
+--------------------------- */
 
-  @media (min-width: 769px) {
-    .hamburger { display: none; }
-  }
-  #home {
-    scroll-margin-top: var(--navbar-height);
-  }
+/* Tablets grandes */
+@media (max-width: 1000px) {
+  .home-left h1 { font-size: 2.4rem; }
+  .bg-text { font-size: 3rem; }
+}
 
-  .about-section {
-    scroll-margin-top: var(--navbar-height);
-  }
-  /* =====================================================
-   HOME – MISMO LOOK DESKTOP EN MOBILE
-   ===================================================== */
+/* Mobile */
 @media (max-width: 768px) {
 
-  /* Mantén estructura */
+  /* NAV */
+  .top-menu { display: none; }
+  .hamburger { display: block; }
+
+  /* HOME layout */
   .home {
     flex-direction: column;
   }
@@ -628,91 +611,102 @@ header {
     text-align: center;
   }
 
-  /* NO tocamos el modelo visual */
   .home-right {
     padding: 190px;
     min-height: calc(90vh - var(--navbar-height));
     align-items: flex-end;
   }
 
-  /* TEXTO: MISMA POSICIÓN, SOLO MÁS PEQUEÑO */
+  /* TEXTO FONDO */
   .bg-text {
-    top: 15%;                 /* EXACTO como desktop */
-    font-size: 3rem;         /* solo escala */
+    top: 15%;
+    font-size: 3rem;
     white-space: nowrap;
   }
 
-  /* IMAGEN: MISMA LÓGICA QUE DESKTOP */
+  /* IMAGEN HERO */
   .hero-img {
     bottom: 0;
     max-height: 85%;
-    max-width: 400px;        /* escala, no reposiciona */
+    max-width: 400px;
   }
 }
 
+/* Desktop */
+@media (min-width: 769px) {
+  .hamburger { display: none; }
+}
 
-/* ===========================
-   SECCIÓN About Me / Sobre mí
-   =========================== */
-   .about-section {
-    background-color: #ffffff; /* FONDO */
-    padding: 50px 10%;
-    font-family: 'Sora', 'Roboto', sans-serif;
-    border-top: 1px solid #e0e0e0;   /* línea delgada superior */
-    border-bottom: 1px solid #e0e0e0; /* línea delgada inferior */
-  }
+/* Scroll offset */
+#home,
+.about-section {
+  scroll-margin-top: var(--navbar-height);
+}
 
-  .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
 
-  .about-header {
-    margin-bottom: 50px;
-  }
+/* ================================================= */
+/*    SECCIÓN ABOUT ME/SOBRE MI | seccion - sobre mi */
+/* ================================================= */
 
-  .about-button {
-    background: linear-gradient(135deg, #7c6fd6, #9c84e2);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
-    transition: all 0.3s ease;
-  }
+.about-section {
+  background-color: #ffffff; /* FONDO */
+  padding: 50px 10%;
+  font-family: 'Sora', 'Roboto', sans-serif;
+  border-top: 1px solid #e0e0e0;   /* línea delgada superior */
+  border-bottom: 1px solid #e0e0e0; /* línea delgada inferior */
+}
 
-  .about-button:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(124, 111, 214, 0.4);
-  }
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .star {
-    font-size: 14px;
-    color: white;
-  }
+.about-header {
+  margin-bottom: 50px;
+}
 
-  .about-header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
-  }
+.about-button {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
+  transition: all 0.3s ease;
+}
 
-  .about-header p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #848caa
-  }
+.about-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 111, 214, 0.4);
+}
+
+.star {
+  font-size: 14px;
+  color: white;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-header p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #848caa
+}
 
 /* GRID FLEX para info */
 .about-info-grid {
@@ -785,50 +779,51 @@ header {
   transform: translateY(0);
 }
 
-/* ===========================
-   SECCIÓN SKILLS
-   =========================== */
-   .skills-section {
-    background: #fafafa;
-    padding: 30px 10%;
-    text-align: left;
-    color: #1a1a1a;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-  }
+/*  ==================================================== */
+/*     SECCIÓN SKILLS | seccion - habilidades y tecnicas */
+/*  ==================================================== */
 
-  .skills-button {
-    background: linear-gradient(135deg, #7c6fd6, #9c84e2);
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
-  }
+.skills-section {
+  background: #fafafa;
+  padding: 30px 10%;
+  text-align: left;
+  color: #1a1a1a;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
 
-  .skills-section h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    border-left: 3px solid #7c6fd6;
-    padding-left: 10px;
-  }
+.skills-button {
+  background: linear-gradient(135deg, #7c6fd6, #9c84e2);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 111, 214, 0.3);
+}
 
-  .skills-section p {
-    font-size: 15px;
-    color: #848caa;
-    margin-bottom: 50px;
-  }
+.skills-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-left: 3px solid #7c6fd6;
+  padding-left: 10px;
+}
+
+.skills-section p {
+  font-size: 15px;
+  color: #848caa;
+  margin-bottom: 50px;
+}
 
 /* ---- GRID DE DOS COLUMNAS ---- */
 .skills-grid-two {
@@ -913,22 +908,22 @@ header {
     gap: 20px;
   }
 }
+/* =================================================================== */
+/*    SECCIÓN SERVICES | seccion - proyectos destacados - innovaciones */
+/* =================================================================== */
 
-/* ===========================
-   SECCIÓN SERVICES
-   =========================== */
-   .service-section {
-    background-color: #050c17;
-    color: #fff;
-    padding: 100px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    overflow: hidden;
-  }
+.service-section {
+  background-color: #050c17;
+  color: #fff;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
 
 /* Parte 1: Contexto */
 .contex-Service {
@@ -1030,9 +1025,10 @@ header {
   transform: translateY(0);
 }
 
-/* ===========================
-  SECCIÓN SKILLS & AWARDS
-=========================== */
+/* =================================================================================== */
+/*   SECCIÓN SKILLS & AWARDS | seccion - certificados - capacidades y reconocimientos  */
+/* =================================================================================== */
+
 .certificado-awards-section {
   background: #fff;
   color: #1a1a1a;
@@ -1094,10 +1090,7 @@ header {
   transform: translateY(0);
 }
 
-/* ====================================================
-     COLUMNA IZQUIERDA → SKILLS CON GRID 4×4
-==================================================== */
-
+/*     COLUMNA IZQUIERDA → SKILLS CON GRID 4×4 */
 /* GRID general */
 .skills-circles-grid {
   display: grid;
@@ -1167,10 +1160,7 @@ header {
   text-align: center;
 }
 
-
-/* ====================================================
-        COLUMNA DERECHA → AWARDS
-==================================================== */
+/*        COLUMNA DERECHA → AWARDS  */
 .awards-column {
   flex: 1 1 50%;
   max-width: 50%;
@@ -1264,10 +1254,9 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* ===========================================
-   SECTION EDUCATION & EXPERIENCE
-=========================================== */
+/* ========================================================= */
+/*    SECTION EDUCATION & EXPERIENCE | seccion - trayectoria */
+/* ========================================================= */
 
 .edu-exp-section {
   background: #ffffff;
@@ -1560,9 +1549,10 @@ header {
     z-index: 1;
   }
 }
-/* ================================
-   SECCION DE PORTAFOLIO
-================================ */
+/* =============================================== */
+/*   SECCION DE PORTAFOLIO | seccion - portafolio  */
+/* =============================================== */
+
 .portfolio-section {
   background: #ffffff;
   padding: 80px 10%;
@@ -1629,20 +1619,24 @@ header {
   color: white;
 }
 
-/* Grid */
+/* PORTFOLIO GRID */
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 28px;
 }
 
-/* Individual item */
+/* PORTFOLIO ITEM */
+
 .portfolio-item {
   position: relative;
   overflow: hidden;
   border-radius: 14px;
   cursor: pointer;
   transition: 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio-img img {
@@ -1658,12 +1652,10 @@ header {
   transform: scale(1.12);
 }
 
+/* Hover Overlay */
 .portfolio-hover {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(30, 30, 47, 0.78);
   color: white;
   display: flex;
@@ -1673,6 +1665,9 @@ header {
   opacity: 0;
   transition: 0.3s ease;
   border-radius: 14px;
+
+  /* FIX IMPORTANTE */
+  pointer-events: none;
 }
 
 .portfolio-item:hover .portfolio-hover {
@@ -1690,33 +1685,133 @@ header {
   opacity: 0.9;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #ffffff;
+  max-width: 900px;
+  width: 90%;
+  border-radius: 18px;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+
+  /* SPLIT LAYOUT */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  animation: modalScale 0.35s ease;
+}
+
+/* IMAGEN */
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXTO */
+.modal-content .modal-text {
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-content h2 {
+  font-size: 36px;
+  color: #2bb44a;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4f6fad;
+}
+
+/* BOTÓN CERRAR */
+.close-modal {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #000;
+  transition: transform 0.2s ease;
+}
+
+.close-modal:hover {
+  transform: scale(1.2);
+}
+
+/* ANIMACIÓN */
+@keyframes modalScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
-/* Animación para Portfolio */
-.portfolio-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform;
+/* Texto justificado */
+.modal-description {
+  text-align: justify;
 }
 
-.portfolio-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Centrar botón dentro del modal */
+.modal-btn {
+  align-self: center;
+  margin-top: 25px;
 }
 
-.portfolio-item {
-  text-decoration: none;
-  color: inherit;
+
+/* BLOQUEAR SCROLL */
+body.modal-open {
+  overflow: hidden;
 }
 
-/* ============================
-           FOOTER
-============================ */
+/* ---------------------------
+          RESPONSIVE 
+--------------------------- */
+
+@media (max-width: 768px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content img {
+    height: 260px;
+  }
+
+  .modal-content .modal-text {
+    padding: 25px;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+  }
+}
+
+/* ===================================================== */
+/*   FOOTER SECTION | seccion - footer - pie de pagina   */
+/* ===================================================== */
+
 .footer {
   background: #1e1e2f;
   color: white;
