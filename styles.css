@@ -1619,11 +1619,11 @@ header {
   color: white;
 }
 
-/* PORTFOLIO GRID */
+/* PORTFOLIO GRID  - tamaño*/
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 28px;
 }
 
@@ -1680,11 +1680,6 @@ header {
   font-weight: 700;
 }
 
-.portfolio-hover p {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
 /* MODAL */
 .modal {
   position: fixed;
@@ -1733,14 +1728,14 @@ header {
 
 .modal-content h2 {
   font-size: 36px;
-  color: #2bb44a;
+  color: #fdc21f;
   margin-bottom: 15px;
 }
 
 .modal-content p {
   font-size: 15px;
   line-height: 1.7;
-  color: #4f6fad;
+  color: #1e1e2f;
 }
 
 /* BOTÓN CERRAR */

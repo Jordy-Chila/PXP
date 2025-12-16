@@ -917,38 +917,38 @@ Script: | script
   <!-- GRID DE PROYECTOS -->
   <div class="portfolio-grid">
 
-    <!-- ITEM 1 -->
-    <a href="https://sove.ec/" target="_blank" class="portfolio-item" data-category="web">
-      <div class="portfolio-img">
-        <img src="img/pfweb1.png" alt="Web Project 1">
-        <div class="portfolio-hover">
-          <h3>S.O.V.E</h3>
-          <p>Sindicato Obreros del Volante de Esmeraldas</p>
-        </div>
-      </div>
-    </a>
+<!-- ITEM 1 -->
+<div class="portfolio-item" data-category="web" data-modal="modal-sove">
+  <div class="portfolio-img">
+    <img src="img/pfweb1.png" alt="S.O.V.E Web Project">
+    <div class="portfolio-hover">
+      <h3>Sindicato Obreros del Volante de Esmeraldas</h3>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 2 -->
-    <a href="https://utlvte-carrerati.github.io/bot.IA/" target="_blank" class="portfolio-item" data-category="web">
-      <div class="portfolio-img">
-        <img src="img/pfweb2.png" alt="Web Project 1">
-        <div class="portfolio-hover">
-          <h3>F.A.C.I</h3>
-          <p>Facultad de Ingenierías</p>
-        </div>
-      </div>
-    </a>
+<!-- ITEM 2 -->
+<div class="portfolio-item" data-category="web" data-modal="modal-faci">
+  <div class="portfolio-img">
+    <img src="img/pfweb2.png" alt="F.A.C.I Web Project">
+    <div class="portfolio-hover">
+      <h3>Facultad de Ingenierías F.A.C.I</h3>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 3 -->
-    <a href="https://drive.google.com/file/d/1PIoKya5HCV_CuRKLbXSFnBRLW8jukydc/view?usp=sharing" target="_blank" class="portfolio-item" data-category="uiux">
-      <div class="portfolio-img">
-        <img src="img/pfui.png" alt="UI UX Design">
-        <div class="portfolio-hover">
-          <h3>C.A.I</h3>
-          <p>Chat Bot</p>
-        </div>
-      </div>
-    </a>
+
+<!-- ITEM 3 -->
+<div class="portfolio-item" data-category="uiux" data-modal="modal-cai">
+  <div class="portfolio-img">
+    <img src="img/pfui.png" alt="C.A.I Chat Bot">
+
+    <div class="portfolio-hover">
+      <h3>Chat Bot</h3>
+    </div>
+  </div>
+
+</div>
 
 <!-- ITEM 4 -->
 <div class="portfolio-item" data-category="mobile" data-modal="modal-app-ar">
@@ -956,47 +956,84 @@ Script: | script
     <img src="img/pfmo.png" alt="AppAR">
     <div class="portfolio-hover">
       <h3>AppAR</h3>
-      <p>Plataforma de Realidad Aumentada diseñada para integrar
-      contenido digital en el entorno real</p>
     </div>
   </div>
 </div>
 
 </div> <!-- cierre correcto de portfolio-grid -->
 </section>
-<!-- MODAL APPAR -->
-<div class="modal" id="modal-app-ar">
-  <div class="modal-content modal-split">
 
+<!-- MODAL APPAR - NODAL -->
+<!-- ITEM 1 | MODAL -->
+<div class="modal" id="modal-sove">
+  <div class="modal-content">
     <span class="close-modal">&times;</span>
-
-    <!-- IMAGEN -->
-    <div class="modal-image">
-      <img src="img/pfmo.png" alt="AppAR">
-    </div>
-
-    <!-- TEXTO -->
+    <img src="img/pfweb1.png" alt="S.O.V.E Website">
     <div class="modal-text">
-      <h2>AppAR</h2>
+      <h2>S.O.V.E</h2>
+      <p class="modal-description">Sitio web institucional desarrollado para el Sindicato de Obreros del Volante de Esmeraldas (S.O.V.E), con el objetivo de modernizar su presencia digital y facilitar el acceso a información relevante para sus afiliados.</p>
+      <a href="https://sove.ec/" class="btn-cv modal-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Visitar sitio
+      </a>
+    </div>
+  </div>
+</div>
 
-      <p class="modal-description">
-        Plataforma de Realidad Aumentada diseñada para integrar
-        contenido digital en el entorno real de forma intuitiva
-        y dinámica.
-      </p>
+<!-- ITEM 2 | MODAL -->
+<div class="modal" id="modal-faci">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img src="img/pfweb2.png" alt="F.A.C.I Web Project">
+    <div class="modal-text">
+      <h2>Facultad de Ingenierías</h2>
+      <p class="modal-description">Proyecto web desarrollado para la Facultad de Ingenierías (F.A.C.I), enfocado en brindar información institucional clara,
+      accesible y moderna para estudiantes y docentes.</p>
 
-      <!-- BOTÓN -->
-      <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing"
+      <a href="https://utlvte-carrerati.github.io/bot.IA/"
       class="btn-cv modal-btn"
       target="_blank"
       rel="noopener noreferrer">
-      <i class="fas fa-file-alt"></i> Download
+      <i class="fas fa-external-link-alt"></i> Visitar sitio
     </a>
   </div>
 </div>
 </div>
 
-<!-- ABRIR / CERRAR MODAL -->
+<!-- ITEM 3 | MODAL -->
+<div class="modal" id="modal-cai">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img src="img/pfui.png" alt="C.A.I Chat Bot">
+    <div class="modal-text">
+      <h2>C.A.I - CHATBOT IA</h2>
+      <p class="modal-description"> C.A.I es un chatbot diseñado para mejorar la experiencia de usuario mediante interacciones inteligentes, claras y accesibles.</p>
+      <a href="https://drive.google.com/file/d/1PIoKya5HCV_CuRKLbXSFnBRLW8jukydc/view?usp=sharing" class="btn-cv modal-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i> Download
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ITEM 4 | MODAL -->
+<div class="modal" id="modal-app-ar">
+  <div class="modal-content modal-split">
+    <span class="close-modal">&times;</span>
+    <!-- IMAGEN -->
+    <div class="modal-image">
+      <img src="img/pfmo.png" alt="AppAR">
+    </div>
+    <!-- TEXTO -->
+    <div class="modal-text">
+      <h2>AppAR</h2>
+      <p class="modal-description">Aplicacion Android de Realidad Aumentada diseñada para integrar contenido digital en el entorno real de forma intuitiva y dinámica. </p>
+      <!-- BOTÓN -->
+      <a href="https://drive.google.com/file/d/1vc9nYCOnqbAYA0f4WIClYngoJWAX3Nun/view?usp=sharing" class="btn-cv modal-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i> Download
+      </a>
+    </div>
+  </div>
+</div>
+
 <script>
   // ABRIR MODAL
   document.querySelectorAll('.portfolio-item[data-modal]').forEach(item => {
