@@ -1258,6 +1258,24 @@ header {
 /*    SECTION EDUCATION & EXPERIENCE | seccion - trayectoria */
 /* ========================================================= */
 
+/* CONTENEDOR DE LAS DOS COLUMNAS */
+.edu-exp-content {
+  position: relative;
+}
+
+/* LÍNEA VERTICAL CENTRAL */
+.edu-exp-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #e0e0e0;
+}
+
+
 .edu-exp-section {
   background: #ffffff;
   padding: 50px 10%;
@@ -1347,6 +1365,13 @@ header {
 .edu-exp-empty {
   height: 100%;
 }
+.edu-exp-box h1 {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+
+
 .edu-exp-box h2 {
   display: inline-block;   /* ← los coloca en la misma línea */
   margin-right: 10px;      /* ← separación entre ellos */
@@ -1386,20 +1411,23 @@ header {
 /* ===========================================
    ALINEACIÓN DE TEXTO POR COLUMNA/POSICIÓN
 =========================================== */
-
-/* Columna 1 → posiciones 1, 5, 9 */
+/* IZQUIERDA */
 .edu-exp-grid > .edu-exp-box:nth-child(1),
 .edu-exp-grid > .edu-exp-box:nth-child(5),
-.edu-exp-grid > .edu-exp-box:nth-child(9) {
+.edu-exp-grid > .edu-exp-box:nth-child(9),
+.edu-exp-grid > .edu-exp-box:nth-child(13){
   text-align: right;
 }
 
-/* Columna 2 → posiciones 3, 7, 11 */
+/* DERECHA */
 .edu-exp-grid > .edu-exp-box:nth-child(3),
 .edu-exp-grid > .edu-exp-box:nth-child(7),
-.edu-exp-grid > .edu-exp-box:nth-child(11) {
+.edu-exp-grid > .edu-exp-box:nth-child(11),
+.edu-exp-grid > .edu-exp-box:nth-child(15){
   text-align: left;
 }
+
+
 
 /* ===========================================
    ICONOS CIRCULARES - CURSOS
@@ -1537,17 +1565,23 @@ header {
     box-shadow: none !important;
   }
 
-  /* 5) LÍNEA entrecortada a la izquierda */
-  .edu-exp-grid::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1px;
-    width: 2px;
-    border-left: 2px dashed #cfcfcf;
-    z-index: 1;
-  }
+.edu-exp-grid {
+  position: relative;
+}
+
+/* LÍNEA VERTICAL CENTRAL REAL */
+.edu-exp-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-left: 3px dashed #cfcfcf;
+  z-index: 0;
+}
+
 }
 /* =============================================== */
 /*   SECCION DE PORTAFOLIO | seccion - portafolio  */
@@ -1738,6 +1772,32 @@ header {
   color: #1e1e2f;
 }
 
+/* TAGS */
+.modal-tags {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 90px;
+  flex-wrap: wrap;
+}
+
+.modal-tags .tag {
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #0b8f3c; /* verde elegante */
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.modal-tags .tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(11, 143, 60, 0.25);
+}
+
 /* BOTÓN CERRAR */
 .close-modal {
   position: absolute;
@@ -1915,6 +1975,7 @@ img {
 ================================ */
 
 /* Evitar selección de texto */
+/*
 body {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1923,12 +1984,15 @@ body {
 }
 
 /* Evitar arrastre de imágenes */
+/*
 img {
   -webkit-user-drag: none;
   pointer-events: none;
 }
 
 /* Permitir selección SOLO donde quieras */
+/*
 .copy-allowed {
   user-select: text;
 }
+
